@@ -1,0 +1,11 @@
+[user]
+	email = edinson.padron@posteo.net
+	name = Edinson E. Padrón Urdaneta
+	signingkey = BE9E89ABDC8BA521
+[merge]
+	conflictStyle = diff3
+[core]
+	editor = nvim
+	pager = bat
+[commit]
+	gpgsign = true
