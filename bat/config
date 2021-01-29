@@ -1,0 +1,3 @@
+--theme="Solarized (light)"
+--wrap=never
+--pager='less -RFS'
