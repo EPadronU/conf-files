@@ -52,12 +52,6 @@ function! BuildComposer(info)
     endif
   endif
 endfunction
-
-function! BuildYCM(info)
-  if a:info.status != 'unchanged' || a:info.force
-    !python3 install.py
-  endif
-endfunction
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 " System path for the plugins managed by vim-plug
@@ -65,7 +59,6 @@ call plug#begin('$HOME/.config/nvim/plugged')
 
 " Bundles ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'airblade/vim-rooter', {'on': 'Rooter'}
 Plug 'altercation/vim-colors-solarized'
 Plug 'andymass/vim-matchup'
@@ -73,6 +66,7 @@ Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'aspectj']}
 Plug 'blankname/vim-fish/', {'for': 'fish'}
 Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'for': 'markdown', 'do': function('BuildComposer') }
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', {'for': ['css', 'html', 'jsp', 'xml', 'xslt', 'javascript.jsx']}
@@ -373,16 +367,6 @@ let g:pymode_indent=1
 let g:pymode_rope=0
 let g:pymode_lint_ignore='E116,E712,E731,E711,E121,C901'
 let g:pymode_lint_unmodified=1
-
-
-" YouCompleteMe ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_list_select_completion = ['<TAB>', '<Enter>']
 
 
 " Restore view options +++++++++++++++++++++++++++++++++++++++++++++++++++++++
