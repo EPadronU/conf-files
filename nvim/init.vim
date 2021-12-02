@@ -403,7 +403,13 @@ let g:UltiSnipsJumpBackwardTrigger='<Leader>b'
 let g:markdown_composer_autostart = 0
 
 " Syntax highlight theme
-let g:markdown_composer_syntax_theme = 'idea'
+let g:markdown_composer_syntax_theme = 'agate'
+
+" Use MultiMarkdown v6
+let g:markdown_composer_external_renderer ='multimarkdown -t html'
+
+" Disable GitHub's stylesheet
+let g:markdown_composer_custom_css = [ 'file:///home/nodxine/.local/share/air.css' ]
 
 
 " vim-root +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
