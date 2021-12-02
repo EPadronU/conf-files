@@ -30,4 +30,6 @@ function cleanup -d 'Clean history & cache files'
       rm -i $files
     end
   end
+
+  clear
 end
