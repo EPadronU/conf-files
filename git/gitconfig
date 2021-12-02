@@ -6,6 +6,6 @@
 	conflictStyle = diff3
 [core]
 	editor = nvim
-	pager = bat
+	pager = batcat
 [commit]
-	gpgsign = true
+   gpgsign = true
