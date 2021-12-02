@@ -690,7 +690,7 @@ end
 # Polyfill for fish < 2.5.0
 if not type -q prompt_hostname
     if not set -q __bobthefish_prompt_hostname
-        set -g __bobthefish_prompt_hostname (hostname | string replace -r '\..*' '')
+        set -g __bobthefish_prompt_hostname (uname -n | string replace -r '\..*' '')
     end
 
     function prompt_hostname
@@ -902,7 +902,7 @@ function __bobthefish_prompt_node -S -d 'Display current node version'
     set -l node_manager
     set -l node_manager_dir
 
-    if type -fq nvm
+    if type -q nvm
       set node_manager 'nvm'
       set node_manager_dir $NVM_DIR
     else if type -fq fnm
@@ -1112,10 +1112,6 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
         return
     end
 
-     __bobthefish_start_segment 008080
-     set_color white
-     echo -n "⛵"
-
     __bobthefish_glyphs
     __bobthefish_colors $theme_color_scheme
 
@@ -1127,6 +1123,9 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
 
     # Status flags and input mode
     __bobthefish_prompt_status $last_status
+
+     __bobthefish_start_segment 333333
+     echo -n "🐲"
 
     # User / hostname info
     __bobthefish_prompt_user
