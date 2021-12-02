@@ -71,6 +71,7 @@ Plug 'euclio/vim-markdown-composer', { 'for': 'markdown', 'do': function('BuildC
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', {'for': ['css', 'html', 'jsp', 'xml', 'xslt', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -240,33 +241,34 @@ augroup init.vim
 " Clear this group to prevent accidental double-loading
 autocmd!
 
-
-" Fish +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-autocmd! BufRead,BufNewFile *.aj setfiletype java
+" General ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 
 " Fish +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType fish compiler fish
-autocmd FileType fish setlocal foldmethod=expr nospell textwidth=99
+autocmd FileType fish setlocal nospell textwidth=99
 
 
 " Java +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal softtabstop=2 shiftwidth=2 textwidth=99
+autocmd! BufRead,BufNewFile *.aj setfiletype java
 
 
 " Javascript +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-autocmd FileType javascript setlocal foldenable foldmethod=indent textwidth=99
+autocmd FileType javascript setlocal foldenable textwidth=99
 
 
 " Javascript.jsx +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType javascript.jsx let g:emmet_html5 = 0
-autocmd FileType javascript.jsx setlocal foldenable foldmethod=indent
+autocmd FileType javascript.jsx setlocal foldenable
 autocmd FileType javascript.jsx setlocal textwidth=99
 
 
 " Kotlin +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-autocmd FileType kotlin setlocal foldenable foldmethod=indent
+autocmd FileType kotlin setlocal foldenable
 autocmd FileType kotlin setlocal softtabstop=2 shiftwidth=2 textwidth=99
 
 
@@ -420,5 +422,34 @@ let g:rooter_manual_only = 1
 let g:rooter_change_directory_for_non_project_files = 'current'
 
 nnoremap <Leader>cd :Rooter<CR>
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" lua-based config ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  sync_install = false,
+  indent = {
+    enable = true
+  },
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      ["foo.bar"] = "Identifier",
+    },
+    additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      scope_incremental = "gnm",
+      node_incremental = "ghk",
+      node_decremental = "ghj",
+    },
+  },
+}
+EOF
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " vim: nospell
