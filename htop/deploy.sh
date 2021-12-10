@@ -3,6 +3,6 @@
 export configuration_files_absolute_path=$(dirname $(readlink -f $0))
 export target_directory=$HOME/.config/htop
 
-mkdir -p $target_directory
+mkdir -vp $target_directory
 
-ln -is $configuration_files_absolute_path/htoprc $target_directory/htoprc
+ln -vis $configuration_files_absolute_path/htoprc $target_directory/htoprc
