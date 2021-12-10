@@ -3,7 +3,6 @@
 " @email: edinson.padron at posteo dot net
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " General options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Enable file type detection
 filetype plugin indent on
@@ -40,7 +39,6 @@ set lazyredraw
 let mapleader = ','
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " vim-plug settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Post-update/-install hooks +++++++++++++++++++++++++++++++++++++++++++++++++
 function! BuildComposer(info)
@@ -60,22 +58,22 @@ call plug#begin('$HOME/.config/nvim/plugged')
 " Bundles ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-rooter', {'on': 'Rooter'}
-Plug 'altercation/vim-colors-solarized'
 Plug 'andymass/vim-matchup'
 Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'aspectj']}
-Plug 'blankname/vim-fish/', {'for': 'fish'}
+Plug 'inkch/vim-fish', {'for': 'fish'}
 Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'for': 'markdown', 'do': function('BuildComposer') }
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', {'for': ['css', 'html', 'jsp', 'xml', 'xslt', 'javascript.jsx']}
-Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
+Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'javascript.jsx'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'tpope/vim-git', {'for': ['git', 'gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail']}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -89,7 +87,6 @@ Plug 'vim-scripts/restore_view.vim'
 call plug#end()
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Buffer options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Edit multiple unsaved files at the same time
 set hidden
@@ -101,12 +98,10 @@ set confirm
 set viminfo=%,'25,f1,<300,:100,/100,h
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Swap file options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set directory=$HOME/.config/nvim/vimswap/
 set swapfile
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 " Backup file options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set backupdir=$HOME/.config/nvim/vimbackup/
@@ -115,12 +110,10 @@ set backup
 set writebackup
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " History file options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set undodir=$HOME/.config/nvim/vimundo/
 set undofile
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 " Search option ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Highlight searches
@@ -139,7 +132,6 @@ set incsearch
 nnoremap <Leader><Space> :nohlsearch<CR>
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Insert options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Better handling of backspace key
 set backspace=indent,eol,start
@@ -150,7 +142,6 @@ set autoindent
 " Emulate typical editor navigation behaviour
 set nostartofline
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 " Status / command line options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Better command line completion
@@ -169,7 +160,6 @@ set laststatus=2
 set cmdheight=1
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Interface options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Display line numbers at the left of the screen
 set number
@@ -177,7 +167,6 @@ set number
 " Show the line number relative to the line with the cursor
 set relativenumber
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 " Indentation options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set smarttab
@@ -187,13 +176,16 @@ set shiftwidth=2
 set softtabstop=2
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Highlighting options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Set the background color brightness
-set background=light
-
 " Color scheme
-colorscheme solarized
+colorscheme onehalflight
+
+" True colors (24 bit) to match colors in nvim and in the terminal
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " Highlight the screen line of the cursor
 set cursorline
@@ -202,7 +194,6 @@ set cursorline
 set colorcolumn=+1
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Spell options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Enable spell checking
 set spell
@@ -210,7 +201,6 @@ set spell
 " Set the language to use for spell checking
 set spelllang=en,es
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 " Maps ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy
@@ -232,7 +222,6 @@ nnoremap <M-Right> :bn<CR>
 tnoremap <Esc> <C-\><C-n>
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Auto commands options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " autocmd group for the following ':autocmd' commands
@@ -245,32 +234,26 @@ autocmd!
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
-
 " Fish +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType fish compiler fish
 autocmd FileType fish setlocal nospell textwidth=99
-
 
 " Java +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal softtabstop=2 shiftwidth=2 textwidth=99
 autocmd! BufRead,BufNewFile *.aj setfiletype java
 
-
 " Javascript +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType javascript setlocal foldenable textwidth=99
-
 
 " Javascript.jsx +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType javascript.jsx let g:emmet_html5 = 0
 autocmd FileType javascript.jsx setlocal foldenable
 autocmd FileType javascript.jsx setlocal textwidth=99
 
-
 " Kotlin +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType kotlin setlocal foldenable
 autocmd FileType kotlin setlocal softtabstop=2 shiftwidth=2 textwidth=99
-
 
 " Python +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType python setlocal textwidth=99
@@ -278,21 +261,27 @@ autocmd FileType python setlocal textwidth=99
 " Delete spaces at the end of each line
 autocmd FileType python normal m`:%s/\s\+$//e ``
 
-
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Go back to the default autocmd group
 augroup end
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " Bundle options ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Airline ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+let g:airline_theme = 'onehalfdark'
+
 " Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
 
 " Integrate with powerline fonts
 let g:airline_powerline_fonts = 1
 
+" Customize some symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+  let g:airline_symbols.colnr = ' ℅:'
+  let g:airline_symbols.maxlinenr = '㏑'
+endif
 
 " CtrlP ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Open the new tab page after the last one
@@ -319,7 +308,6 @@ let g:ctrlp_custom_ignore = {
 \ 'dir': '\v[\/](tmp|dist|bower_components|node_modules|build|gradle)$',
 \}
 
-
 " JavaComplete +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:JavaComplete_GradleExecutable = (
 \ '$HOME/.sdkman/candidates/gradle/current/bin/gradle'
@@ -331,13 +319,11 @@ let g:JavaComplete_ImportSortType = 'packageName'
 
 let g:JavaComplete_UsePython3 = 1
 
-
 " Mundo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:mundo_right = 1
 let g:mundo_width = 40
 
 nnoremap <Leader>u :MundoToggle<CR>
-
 
 " NERDCommenter ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Avoid <Leader>cc behaving like <Leader>cn
@@ -352,7 +338,6 @@ let g:NERDSpaceDelims = 1
 " Remove any space found in empty (un)commented lines if there is any
 let g:NERDTrimTrailingWhitespace = 1
 
-
 " NERDTree +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Toggle NERDTree's window visualization
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -363,23 +348,15 @@ let g:NERDTreeWinPos = 'right'
 " Set the window's size
 let g:NERDTreeWinSize = 40
 
-
 " PythonMode +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:pymode_indent=1
 let g:pymode_rope=0
 let g:pymode_lint_ignore='E116,E712,E731,E711,E121,C901'
 let g:pymode_lint_unmodified=1
 
-
 " Restore view options +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 set viewoptions=cursor,folds,slash,unix
 set viewdir=$HOME/.config/nvim/vimview/
-
-
-" Solarized ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-let g:solarized_contrast = 'normal'
-let g:solarized_hitrail = 1
-
 
 " The Silver Searcher ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if executable('ag')
@@ -393,12 +370,10 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-
 " UltiSnips ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:UltiSnipsExpandTrigger='<Leader>x'
 let g:UltiSnipsJumpForwardTrigger='<Leader>f'
 let g:UltiSnipsJumpBackwardTrigger='<Leader>b'
-
 
 " vim-markdown-composer ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Don't start the server when a markdown file is opened
@@ -408,11 +383,15 @@ let g:markdown_composer_autostart = 0
 let g:markdown_composer_syntax_theme = 'agate'
 
 " Use MultiMarkdown v6
-let g:markdown_composer_external_renderer ='multimarkdown -t html'
+if executable('multimarkdown')
+  let g:markdown_composer_external_renderer ='multimarkdown -t html'
+endif
 
 " Disable GitHub's stylesheet
 let g:markdown_composer_custom_css = [ 'file:///home/nodxine/.local/share/air.css' ]
 
+" Refresh every 60 seconds
+let g:markdown_composer_refresh_rate = 60000
 
 " vim-root +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Don't change the current working directory automatically
