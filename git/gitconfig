@@ -1,11 +1,41 @@
 [user]
-	email = edinson.padron@posteo.net
 	name = Edinson E. Padrón Urdaneta
-	signingkey = BE9E89ABDC8BA521
-[merge]
-	conflictStyle = diff3
+	email = edinson.padron+git@posteo.net
+	signingkey = FD9C251EB1F44DE6
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
 [core]
 	editor = nvim
 	pager = batcat
-[commit]
-   gpgsign = true
+[diff]
+	algorithm = histogram
+	mnemonicPrefix = true
+	renames = copy
+	tool = batcat
+[gpg]
+	program = gpg2
+[init]
+	defaultBranch = master
+[log]
+	abbrevCommit = true
+	follow = true
+[merge]
+	conflictStyle = diff3
+	ff = false
+[pull]
+	rebase = true
+[push]
+	default = current
+[status]
+	showUntrackedFiles = all
+[tag]
+	sort = version:refname
+[versionsort]
+	prereleaseSuffix = -pre
+	prereleaseSuffix = .pre
+	prereleaseSuffix = -beta
+	prereleaseSuffix = .beta
+	prereleaseSuffix = -rc
+	prereleaseSuffix = .rc
