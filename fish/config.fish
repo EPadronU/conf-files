@@ -6,8 +6,8 @@ alias grep 'grep -E'
 alias sensors 'watch -n 1 sensors'
 alias sql 'sqlite3'
 alias clocks 'watch -t -d -n 1 zdump America/Caracas America/Los_Angeles America/New_York'
-alias bat batcat
-alias cat 'batcat --pager=never'
+#alias bat batcat
+alias cat 'bat --pager=never'
 alias MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 ### Java
 alias mvn-generate-new-project 'mvn archetype:generate -DarchetypeArtifactId=javase-quickstart -DarchetypeGroupId=com.smartsystems'
