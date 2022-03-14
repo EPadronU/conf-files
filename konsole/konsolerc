@@ -1,0 +1,51 @@
+[Desktop Entry]
+DefaultProfile=NodxyWorld.profile
+
+[KonsoleWindow]
+RememberWindowSize=false
+RemoveWindowTitleBarAndFrame=true
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAAAAA4EAAAIEAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAwAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAAAAAfsAAAAAAAAAAA==
+StatusBar=Disabled
+eDP HDMI-A-1-0 Height 1080x1920=1879
+eDP HDMI-A-1-0 Height 1920x1080=1038
+eDP HDMI-A-1-0 Height 3840x2160=2119
+eDP HDMI-A-1-0 Width 1080x1920=1066
+eDP HDMI-A-1-0 Width 1920x1080=1908
+eDP HDMI-A-1-0 Width 3840x2160=3826
+eDP HDMI-A-1-0 XPosition 1080x1920=7
+eDP HDMI-A-1-0 XPosition 1920x1080=2042
+eDP HDMI-A-1-0 XPosition 3840x2160=7
+eDP HDMI-A-1-0 YPosition 1080x1920=34
+eDP HDMI-A-1-0 YPosition 1920x1080=456
+eDP HDMI-A-1-0 YPosition 3840x2160=34
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=TextOnly
+
+[MainWindow][Toolbar sessionToolbar]
+IconSize=16
+
+[SearchSettings]
+SearchRegExpression=true
+
+[SplitView]
+SplitViewVisibility=AlwaysHideSplitHeader
+
+[TabBar]
+CloseTabButton=None
+ExpandTabWidth=true
+TabBarPosition=Top
+
+[Toolbar mainToolBar]
+ToolButtonStyle=TextOnly
+
+[Toolbar sessionToolbar]
+IconSize=16
+
+[UiSettings]
+ColorScheme=Default
