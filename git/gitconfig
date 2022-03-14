@@ -8,12 +8,12 @@
 	gpgsign = true
 [core]
 	editor = nvim
-	pager = batcat
+	pager = bat
 [diff]
 	algorithm = histogram
 	mnemonicPrefix = true
 	renames = copy
-	tool = batcat
+	tool = bat
 [gpg]
 	program = gpg2
 [init]
