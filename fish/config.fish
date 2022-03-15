@@ -15,7 +15,7 @@ alias mvn-generate-new-project 'mvn archetype:generate -DarchetypeArtifactId=jav
 ## Global enviroment variables ################################################
 if status --is-login
   set -gx PATH $PATH ~/.local/bin
-  set -gx BROWSER (type -p vivaldi-snapshot)
+  set -gx BROWSER (type -p firefox)
   set -gx EDITOR (type -p nvim)
   set -gx MOZ_X11_EGL 1
   set -gx fish_browser $BROWSER
