@@ -29,4 +29,3 @@ function sdk-use -d "Use the lattest installed version of a candidate given its 
 
     sdk use $candidate (basename $version_path)
 end
-
