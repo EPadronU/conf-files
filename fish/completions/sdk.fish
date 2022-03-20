@@ -67,8 +67,8 @@ function __fish_sdkman_candidates_with_versions
     set regexpHome (string replace -a '/' '\\/' "$HOME/")
 
     find "$HOME"/.sdkman/candidates/ -mindepth 2 -maxdepth 2 -name '*current' \
-    | awk -F '/' '{ print $(NF-1) }' \
-    | sort -u
+        | awk -F / '{ print $(NF-1) }' \
+        | sort -u
 end
 
 function __fish_sdkman_installed_versions
@@ -83,144 +83,144 @@ end
 # # # # # #
 
 # install
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'i install' \
     -d 'Install new version'
 complete -c sdk -f -n '__fish_sdkman_using_command i install' \
-        -a "(__fish_sdkman_candidates)"
+    -a "(__fish_sdkman_candidates)"
 complete -c sdk -f -n '__fish_sdkman_specifying_candidate i install' \
-            # TODO complete available versions --> #4
-            -a 'a.b.c' \
-            -d "version list unavailable"
+    # TODO complete available versions --> #4
+    -a 'a.b.c' \
+    -d "version list unavailable"
 complete -c sdk -f -n '__fish_sdkman_specifying_candidate i install' \
-            -a 'x.y.z' \
-            -d "Add your own; specify path!"
-                # Implicit: complete files as fourth parameter
+    -a 'x.y.z' \
+    -d "Add your own; specify path!"
+# Implicit: complete files as fourth parameter
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 3 i install'
-                    # block
+# block
 
 # uninstall
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'rm uninstall' -d 'Uninstall version'
 complete -c sdk -f -n '__fish_sdkman_using_command rm uninstall' \
-        -a "(__fish_sdkman_candidates_with_versions)"
+    -a "(__fish_sdkman_candidates_with_versions)"
 complete -c sdk -f -n '__fish_sdkman_specifying_candidate rm uninstall' \
-            -a "(__fish_sdkman_installed_versions)"
+    -a "(__fish_sdkman_installed_versions)"
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 2 rm uninstall'
-                # block
+# block
 
 # list
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'ls list' \
     -d 'List versions'
 complete -c sdk -f -n '__fish_sdkman_using_command ls list' \
-        -a "(__fish_sdkman_candidates)"
+    -a "(__fish_sdkman_candidates)"
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 1 ls list'
-            # block
+# block
 
 # use
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'u use' \
     -d 'Use specific version'
 complete -c sdk -f -n '__fish_sdkman_using_command u use' \
-        -a "(__fish_sdkman_candidates_with_versions)"
+    -a "(__fish_sdkman_candidates_with_versions)"
 complete -c sdk -f -n '__fish_sdkman_specifying_candidate u use' \
-            -a "(__fish_sdkman_installed_versions)"
+    -a "(__fish_sdkman_installed_versions)"
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 2 u use'
-                # block
+# block
 
 # default
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'd default' \
     -d 'Set default version'
 complete -c sdk -f -n '__fish_sdkman_using_command d default' \
-        -a "(__fish_sdkman_candidates_with_versions)"
+    -a "(__fish_sdkman_candidates_with_versions)"
 complete -c sdk -f -n '__fish_sdkman_specifying_candidate d default' \
-            -a "(__fish_sdkman_installed_versions)"
+    -a "(__fish_sdkman_installed_versions)"
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 2 d default'
-                # block
+# block
 
 # current
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'c current' \
     -d 'Display current version'
 complete -c sdk -f -n '__fish_sdkman_using_command c current' \
-        -a "(__fish_sdkman_candidates)"
+    -a "(__fish_sdkman_candidates)"
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 1 c current'
-            # block
+# block
 
 # upgrade
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'ug upgrade' \
     -d 'Display what is outdated'
 complete -c sdk -f -n '__fish_sdkman_using_command ug upgrade' \
-        -a "(__fish_sdkman_candidates_with_versions)"
+    -a "(__fish_sdkman_candidates_with_versions)"
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 1 ug upgrade'
-            # block
+# block
 
 # version
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'v version' \
     -d 'Display version'
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 0 v version'
-        # block
+# block
 
 # broadcast
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'b broadcast' \
     -d 'Display broadcast message'
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 0 b broadcast'
-        # block
+# block
 
 # help
-complete -c sdk -f -n '__fish_sdkman_no_command' \
+complete -c sdk -f -n __fish_sdkman_no_command \
     -a 'h help' \
     -d 'Display help message'
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 0 h help'
-        # block
+# block
 
 # offline
-complete -c sdk -f -n '__fish_sdkman_no_command' \
-    -a 'offline' \
+complete -c sdk -f -n __fish_sdkman_no_command \
+    -a offline \
     -d 'Set offline status'
 complete -c sdk -f -n '__fish_sdkman_using_command offline' \
-        -a 'enable' \
-        -d 'Make sdk work while offline'
+    -a enable \
+    -d 'Make sdk work while offline'
 complete -c sdk -f -n '__fish_sdkman_using_command offline' \
-        -a 'disable' \
-        -d 'Turn on all features'
+    -a disable \
+    -d 'Turn on all features'
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 1 offline'
-            # block
+# block
 
 # selfupdate
-complete -c sdk -f -n '__fish_sdkman_no_command' \
-    -a 'selfupdate' \
+complete -c sdk -f -n __fish_sdkman_no_command \
+    -a selfupdate \
     -d 'Update sdk'
 complete -c sdk -f -n '__fish_sdkman_using_command selfupdate' \
-        -a 'force' \
-        -d 'Force re-install of current version'
+    -a force \
+    -d 'Force re-install of current version'
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 1 selfupdate'
-            # block
+# block
 
 # update
-complete -c sdk -f -n '__fish_sdkman_no_command' \
-    -a 'update' \
+complete -c sdk -f -n __fish_sdkman_no_command \
+    -a update \
     -d 'Reload the candidate list'
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 0 update'
-        # block
+# block
 
 # flush
-complete -c sdk -f -n '__fish_sdkman_no_command' \
-    -a 'flush' \
+complete -c sdk -f -n __fish_sdkman_no_command \
+    -a flush \
     -d 'Clear out caches'
 complete -c sdk -f -n '__fish_sdkman_using_command flush' \
-        -a 'broadcast' \
-        -d 'Re-download news'
+    -a broadcast \
+    -d 'Re-download news'
 complete -c sdk -f -n '__fish_sdkman_using_command flush' \
-        -a 'archives' \
-        -d 'Remove downloads'
+    -a archives \
+    -d 'Remove downloads'
 complete -c sdk -f -n '__fish_sdkman_using_command flush' \
-        -a 'temp' \
-        -d 'Clear installation prep folder'
+    -a temp \
+    -d 'Clear installation prep folder'
 complete -c sdk -f -n '__fish_sdkman_command_has_enough_parameters 1 flush'
-            # block
+# block
