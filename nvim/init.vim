@@ -236,7 +236,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " Fish +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType fish compiler fish
-autocmd FileType fish setlocal nospell textwidth=99
+autocmd FileType fish setlocal nospell softtabstop=4 shiftwidth=4 textwidth=99
 
 " Java +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
