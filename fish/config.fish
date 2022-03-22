@@ -5,7 +5,6 @@
 alias grep 'grep -E'
 alias sql sqlite3
 alias cat 'bat --pager=never'
-alias MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 
 ### Java-related
 alias mvn-generate-new-project 'mvn \
@@ -33,6 +32,7 @@ if status --is-login
     set -gx fish_browser $BROWSER
     set -gx fish_help_browser $BROWSER
     set -gx LESS --quit-if-one-screen --hilite-search --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --no-histdups --save-marks
+    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     abbr --add --global gin 'git init'
     abbr --add --global gco 'git checkout'
