@@ -1,7 +1,6 @@
 [Desktop Entry]
 DefaultProfile=NodxyWorld.profile
 
-
 [KFileDialog Settings]
 detailViewIconSize=16
 
@@ -13,6 +12,7 @@ ShowMenuBarByDefault=false
 [MainWindow]
 MenuBar=Disabled
 StatusBar=Disabled
+ToolBarsMovable=Disabled
 
 [MainWindow][Toolbar mainToolBar]
 ToolButtonStyle=TextOnly
