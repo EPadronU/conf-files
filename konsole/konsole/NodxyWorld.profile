@@ -1,7 +1,7 @@
 [Appearance]
-ColorScheme=One Half Dark
+ColorScheme=onehalf-dark
 DimmValue=39
-Font=Fira Code Medium,12,-1,5,57,0,0,0,0,0,Regular
+Font=FiraCode Nerd Font Mono,12,-1,5,57,0,0,0,0,0,Medium
 TabColor=22,25,37,0
 UseFontLineChararacters=true
 

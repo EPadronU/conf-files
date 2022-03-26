@@ -1,12 +1,3 @@
-[Background]
-Color=250,250,250
-
-[BackgroundFaint]
-Color=250,250,250
-
-[BackgroundIntense]
-Color=250,250,250
-
 [Color0]
 Color=56,58,66
 
@@ -88,7 +79,14 @@ Color=56,58,66
 [ForegroundIntense]
 Color=56,58,66
 
+[Background]
+Color=250,250,250
+
+[BackgroundFaint]
+Color=250,250,250
+
+[BackgroundIntense]
+Color=250,250,250
+
 [General]
-Description=One Half Light
-Opacity=1
-Wallpaper=
+Description=OneHalf Light

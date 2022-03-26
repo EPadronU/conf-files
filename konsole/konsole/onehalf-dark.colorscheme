@@ -1,12 +1,3 @@
-[Background]
-Color=40,44,52
-
-[BackgroundFaint]
-Color=40,44,52
-
-[BackgroundIntense]
-Color=40,44,52
-
 [Color0]
 Color=40,44,52
 
@@ -88,7 +79,14 @@ Color=220,223,228
 [ForegroundIntense]
 Color=220,223,228
 
+[Background]
+Color=40,44,52
+
+[BackgroundFaint]
+Color=40,44,52
+
+[BackgroundIntense]
+Color=40,44,52
+
 [General]
-Description=One Half Dark
-Opacity=1
-Wallpaper=
+Description=OneHalf Dark
