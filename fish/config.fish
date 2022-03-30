@@ -20,6 +20,14 @@ alias sensors 'watch -n 1 sensors'
 if status --is-interactive
     set -gx GPG_TTY (tty)
     set -uq fish_private_mode && set -gx fish_private_mode $fish_private_mode
+
+    abbr --add --global gin 'git init'
+    abbr --add --global gst 'git status'
+    abbr --add --global gco 'git checkout'
+    abbr --add --global gcm 'git commit -m'
+    abbr --add --global gam 'git commit -a --amend --no-edit --date=now'
+    abbr --add --global glg 'git log --graph --all'
+    abbr --add --global gln 'git log --name-only'
 end
 
 ## Login shell configuration ##################################################
@@ -33,11 +41,4 @@ if status --is-login
     set -gx fish_help_browser $BROWSER
     set -gx LESS --quit-if-one-screen --hilite-search --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --no-histdups --save-marks
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
-    abbr --add --global gin 'git init'
-    abbr --add --global gco 'git checkout'
-    abbr --add --global gcm 'git commit -m'
-    abbr --add --global gam 'git commit -a --amend --no-edit --date=now'
-    abbr --add --global glg 'git log --graph --all'
-    abbr --add --global gln 'git log --name-only'
 end
