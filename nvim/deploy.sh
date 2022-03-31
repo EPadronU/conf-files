@@ -5,4 +5,5 @@ target_directory=$HOME/.config/nvim
 
 mkdir -vp $target_directory
 
-ln -vis $configuration_files_absolute_path/init.vim $target_directory/init.vim
+ln -vis $configuration_files_absolute_path/init.lua $target_directory/init.lua
+ln -vis $configuration_files_absolute_path/lua $target_directory/lua
