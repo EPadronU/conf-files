@@ -14,7 +14,7 @@ function cleanup -d 'Clean history & cache files'
     end
 
     if set -q _flag_a; or set -q _flag_v
-        set files $files ~/.config/nvim/vim{backup,swap,view,undo}/*
+        set files $files ~/.local/share/nvim/{backup,swap,view,undo}/*
     end
 
     if set -q _flag_a; and set -q _flag_v; and test -e $shada_file
