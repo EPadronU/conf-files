@@ -29,9 +29,7 @@ return require("packer").startup({
     use { "tpope/vim-surround", requires = "tpope/vim-repeat" }
 
     -- Colorscheme --
-    use { "sonph/onehalf",
-      config = "vim.cmd[[colorscheme onehalfdark]]",
-      rtp = "vim" }
+    use { "shaunsingh/solarized.nvim" }
 
     -- Language support --
     -- (Outdated but better than nothing) Support for editing fish scripts
