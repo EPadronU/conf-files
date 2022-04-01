@@ -139,7 +139,8 @@ vim.opt.wrap = false
 
 -- Plugins ----------------------------------------------------------------------------------------
 -- [Airline] --
-vim.g.airline_theme = "onehalfdark"
+vim.g.airline_theme = "solarized"
+vim.g.airline_solarized_bg = "light"
 
 -- Automatically displays all buffers when there's only one tab open
 vim.cmd[[ let g:airline#extensions#tabline#enabled = 1 ]]
