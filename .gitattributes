@@ -1,3 +1,7 @@
 # git config filter.konsole-ignore.clean "grep -Ev '^FileDialogSize|Recent |eDP|State=|RestorePositionForNextInstance|:'"
 # git config filter.konsole-ignore.smudge cat
 konsolerc filter=konsole-ignore
+
+# git config filter.keepass-ignore.clean "grep -Ev 'Own='"
+# git config filter.keepass-ignore.smudge cat
+keepassxc.ini filter=keepass-ignore
