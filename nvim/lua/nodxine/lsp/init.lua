@@ -7,3 +7,4 @@ end
 
 require("nodxine.lsp.lsp-installer")
 require("nodxine.lsp.handlers").setup()
+require("nodxine.lsp.settings")

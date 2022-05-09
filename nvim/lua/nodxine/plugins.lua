@@ -16,39 +16,56 @@ return require("packer").startup({
     -- "Smart and Powerful commenting plugin for neovim"
     use "numToStr/Comment.nvim"
 
-    -- Automatically restore file's cursor position and folding information after restarting (n)vim
-    use "vim-scripts/restore_view.vim"
+    -- A better `:mksession` alternative
+    use "tpope/vim-obsession"
 
     -- An autopair plugin that supports multiple characters
     use "windwp/nvim-autopairs"
 
-    -- A Vim plugin to visualizes the Vim undo tree
+    -- A Vim plugin to visualizes the Vim undo tree (pure vim alternative: mbbill/undotree)
     use { "simnalamburt/vim-mundo", cmd = "MundoToggle" }
 
     -- Delete, change and add 'surroundings' (eg: (, [, {, ', ", <tag>, and more)
     use { "tpope/vim-surround", requires = "tpope/vim-repeat" }
 
-    -- Colorscheme --
+    -- Allows to delete buffers without closing windows or messing up the layout
+    use { "moll/vim-bbye" }
+
+    -- Solarized colorscheme written in lua for NeoVim
     use { "shaunsingh/solarized.nvim" }
 
-    -- Language support --
-    -- (Outdated but better than nothing) Support for editing fish scripts
-    use { "inkch/vim-fish", ft = "fish", config = function() vim.cmd[[compiler! fish]] end }
-
-    -- Status-line --
-    use "vim-airline/vim-airline"
-    use { "vim-airline/vim-airline-themes", requires = "vim-airline/vim-airline" }
-
-    -- Markdown --
     -- Preview in a browser a HTML generated version of a markdown file
     use { "euclio/vim-markdown-composer",
       ft = "markdown",
       run = "cargo build --release --locked",
       cmd = "ComposerStart" }
 
+    -- A File Explorer For Neovim Written In Lua
+    use { "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" }
+
+    -- A buffer line (with tabpage integration) for Neovim built using lua
+    use { "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" }
+
+    -- Persist and toggle multiple terminals during an editing session
+    use "akinsho/toggleterm.nvim"
+
+    -- Language support --
+    -- (Outdated but better than nothing) Support for editing fish scripts
+    use { "inkch/vim-fish", ft = "fish", config = function() vim.cmd[[ compiler! fish ]] end }
+
+    -- Status-line --
+    -- "Lean & mean status/tabline for vim that's light as air"
+    use "vim-airline/vim-airline"
+
+    -- Theme repository for vim-airline
+    use { "vim-airline/vim-airline-themes", requires = "vim-airline/vim-airline" }
+
     -- Git --
     -- Integration with Git providing signs in the signcolumn and mappings to operate on hunks
     use { "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim", "tpope/vim-repeat" } }
+
+    -- Enable Git-related information for the statusline plus a bunch of commands and mappings
+    use "tpope/vim-fugitive"
 
     -- LSP --
     -- A collection of common configurations for Neovim's built-in language server client
@@ -58,8 +75,10 @@ return require("packer").startup({
     use { "williamboman/nvim-lsp-installer", requires = "neovim/nvim-lspconfig" }
 
     -- Extensions for the built-in LSP support for eclipse.jdt.ls
-    use { "mfussenegger/nvim-jdtls", ft = "java",
-      requires = "neovim/nvim-lspconfig" }
+    use { "mfussenegger/nvim-jdtls", requires = "neovim/nvim-lspconfig" }
+
+    -- Provide a way for non-LSP sources to hook into NeoVim's LSP features
+    use "jose-elias-alvarez/null-ls.nvim"
 
     -- Snippets --
     -- Snippets engine
@@ -103,10 +122,6 @@ return require("packer").startup({
     -- For setting the `commentstring` option based on the cursor location in the file
     use { "JoosepAlviste/nvim-ts-context-commentstring",
       requires = "nvim-treesitter/nvim-treesitter" }
-
-    -- NvimTree --
-    -- A File Explorer For Neovim Written In Lua
-    use { "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" }
   end,
   config = {
     display = {

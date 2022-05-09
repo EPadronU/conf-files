@@ -1,10 +1,16 @@
-local status_ok, jdtls = pcall(require, "jdtls")
+local status_ok, lspconfig = pcall(require, "lspconfig")
 
 if not status_ok then
-  return {}
+  return
 end
 
-return {
+local jdtls_status_ok, jdtls = pcall(require, "jdtls")
+
+if not jdtls_status_ok then
+  return
+end
+
+lspconfig.jdtls.setup {
   settings = {
     java = {
       -- Enable/disable the 'auto build'
@@ -100,6 +106,7 @@ return {
       semanticHighlighting = { enabled = true },
     },
   },
+
   -- Language server `initializationOptions`
   init_options = {
     -- Enable nvim-jdtls extra features
@@ -110,6 +117,7 @@ return {
     -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
     bundles = {},
   },
+
   on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
 
@@ -126,4 +134,6 @@ return {
 
     require("jdtls.setup").add_commands()
   end,
+
+  capabilities = require("nodxine.lsp.handlers").capabilities,
 }

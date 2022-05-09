@@ -11,9 +11,6 @@ nvim_tree.setup {
   -- Completely disable netrw
   disable_netrw = true,
 
-  -- Hide the path of the current working directory on top of the tree
-  hide_root_folder = false,
-
   -- Keeps the cursor on the first letter of the filename when moving in the tree
   hijack_cursor = true,
 
