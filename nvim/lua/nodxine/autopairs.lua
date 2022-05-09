@@ -83,9 +83,9 @@ autopairs.setup {
 }
 
 -- cmp integration --------------------------------------------------------------------------------
-local status_ok, cmp = pcall(require, "cmp")
+local cmp_status_ok, cmp = pcall(require, "cmp")
 
-if status_ok then
+if cmp_status_ok then
   local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
   -- Enable inserting `(` after select function or method item

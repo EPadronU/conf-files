@@ -13,6 +13,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = vim.g.mapleader
 
 -- Normal mode ------------------------------------------------------------------------------------
+-- Duplicate the current line below it
+keymap("n", "<Leader>dd", "yyp", opts)
+
+-- Duplicate the current line above it
+keymap("n", "<Leader>dD", "yyP", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -21,13 +27,21 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Window resize
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 
 -- Buffer navigation
-keymap("n", "<M-Left>", ":bp<CR>", opts)
-keymap("n", "<M-Right>", ":bn<CR>", opts)
+keymap("n", "<M-h>", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<M-l>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<M-Left>", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<M-Right>", ":BufferLineMoveNext<CR>", opts)
+
+-- Tab navigation
+keymap("n", "<M-j>", ":tabprevious<CR>", opts)
+keymap("n", "<M-k>", ":tabnext<CR>", opts)
+keymap("n", "<Leader>tn", ":tabnew %<CR>", opts)
+keymap("n", "<Leader>tc", ":tabnew<CR>", opts)
 
 -- Turn off search pattern highlight temporally
 keymap("n", "<Leader><Space>", ":nohlsearch<CR>", opts)
@@ -39,7 +53,7 @@ keymap("n", "<Leader>s", ":set spell!<CR>", opts)
 keymap("n", "<Leader>u", ":MundoToggle<CR>", opts)
 
 -- Start Markdown Composer
-keymap("n", "<Leader>c", ":ComposerStart<CR>", opts)
+keymap("n", "<Leader>cs", ":ComposerStart<CR>", opts)
 
 -- Move vertically by visual line
 keymap("n", "j", eval("v:count ? 'j' : 'gj'"), opts)
@@ -51,7 +65,12 @@ keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
 -- [Telescope] --
 keymap("n", "<C-p>", ":Telescope find_files theme=dropdown previewer=false<CR>", opts)
 
-keymap("n", "<Leader>lg", ":Telescope live_grep theme=ivy<CR>", opts)
+keymap("n", "<Leader>tg", ":Telescope live_grep theme=ivy<CR>", opts)
+
+-- [bbye] --
+keymap("n", "<Leader>bd", ":Bdelete<CR>", opts)
+keymap("n", "<Leader>bD", ":bufdo :Bdelete<CR>", opts)
+keymap("n", "<Leader>bw", ":Bwipeout<CR>", opts)
 
 -- Visual mode ------------------------------------------------------------------------------------
 -- Do not loose the current selection when shift indentation
@@ -62,8 +81,11 @@ keymap("v", "<", "<gv", opts)
 keymap("v", "<A-S-j>", ":move '>+1<CR>gv", opts)
 keymap("v", "<A-S-k>", ":move '<-2<CR>gv", opts)
 
--- Don't replace what was yanked after a paste
-keymap("v", "p", '"_dP', opts)
+-- Duplicate the selection below it
+keymap("v", "<Leader>dd", "ygv<Esc>p", opts)
+
+-- Duplicate the selection above it
+keymap("v", "<Leader>dD", "yP", opts)
 
 -- Term mode --------------------------------------------------------------------------------------
 -- Return to normal mode inside :term

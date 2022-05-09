@@ -66,10 +66,10 @@ configs.setup {
       scope_incremental = "gnm",
 
       -- In visual mode, increment to the upper scope
-      node_incremental = "ghk",
+      node_incremental = "gnk",
 
       -- In visual mode, decrement to the previous named node
-      node_decremental = "ghj",
+      node_decremental = "gnj",
     },
   },
 
@@ -109,3 +109,6 @@ configs.setup {
 -- Enable Treesitter-based folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Show all folds opened by default
+vim.opt.foldenable = false

@@ -51,6 +51,7 @@ local kind_icons = {
   TypeParameter = "",
 }
 
+-- Check https://github.com/hrsh7th/nvim-cmp/issues/231 for breaking changes
 cmp.setup {
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -145,6 +146,5 @@ cmp.setup {
   },
   experimental = {
     ghost_text = false,
-    native_menu = false,
   },
 }

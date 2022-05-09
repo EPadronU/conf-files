@@ -1,4 +1,10 @@
-return {
+local status_ok, lspconfig = pcall(require, "lspconfig")
+
+if not status_ok then
+  return
+end
+
+lspconfig.sumneko_lua.setup {
   settings = {
     Lua = {
       diagnostics = {
@@ -16,5 +22,9 @@ return {
         enable = false,
       },
     }
-  }
+  },
+
+  on_attach = require("nodxine.lsp.handlers").on_attach,
+
+  capabilities = require("nodxine.lsp.handlers").capabilities,
 }

@@ -50,6 +50,9 @@ vim.opt.incsearch = true
 -- Make `-` part of a word (e.g.: pop-up)
 vim.opt.iskeyword:append("-")
 
+-- Always show a status line
+vim.opt.laststatus = 3
+
 -- Redraw only when we need to (can speed-up macro execution)
 vim.opt.lazyredraw = true
 
@@ -122,6 +125,9 @@ vim.opt.timeoutlen = 1000
 -- Enables 24-bit RGB color in the TUI
 vim.opt.termguicolors = true
 
+-- Maximum width of text per line
+vim.opt.textwidth = 99
+
 -- Preserve undo history to an undo file
 vim.opt.undofile = true
 
@@ -138,27 +144,11 @@ vim.opt.wildmode = { "longest:full", "full" }
 vim.opt.wrap = false
 
 -- Plugins ----------------------------------------------------------------------------------------
--- [Airline] --
-vim.g.airline_theme = "solarized"
-vim.g.airline_solarized_bg = "light"
-
--- Automatically displays all buffers when there's only one tab open
-vim.cmd[[ let g:airline#extensions#tabline#enabled = 1 ]]
-
--- Integrate with powerline fonts
-vim.g.airline_powerline_fonts = 1
-
--- Customize some symbols
-vim.g.airline_symbols = {
-  colnr = " ℅:",
-  maxlinenr = "㏑"
-}
-
 -- [Mundo] --
 -- Open to the right of the screen
 vim.g.mundo_right = 1
 
--- Extend for 40 columns
+-- Extend for 30 columns
 vim.g.mundo_width = 30
 
 -- Set the vertical height of the Mundo preview
