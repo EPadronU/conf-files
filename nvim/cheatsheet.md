@@ -46,6 +46,7 @@
 | §ρ  |  N   | λe      | Toggle the NvimTree window |
 | §ρ  |  N   | C-p     | Open Telescope's find_files |
 | §ρ  |  N   | λtg     | Open Telescope's live_grep |
+| §ρ  |  N   | λmks    | Make/write a global session file with MiniSessions |
 | §   |  V   | A-S-j   | Move the selected lines one line down |
 | §   |  V   | A-S-k   | Move the selected lines one line up |
 | §   |  T   | \<Esc>  | Return to normal mode |
@@ -320,6 +321,20 @@ ih
 |     |  I   | C-p         | Cycle to the previous search prompt in the history |
 |     |  I   | C-n         | Cycle to the next search prompt in the history |
 |     |  I   | C-l         | Open completion menu containing the tags which can be used to filter the results in a faster way |
+
+---
+
+|     | mini.starter |||
+|     | Mode | Keymap  | Description |
+| :-  | :-:  | :-:     | :-          |
+|     |  N   | \<Up>   | Move to the previous item |
+|     |  N   | \<Down> | Move to the next item |
+|     |  N   | C-p     | Same as `<Up>` |
+|     |  N   | C-n     | Same as `<Down>` |
+|     |  N   | M-k     | Same as `<Up>` |
+|     |  N   | M-j     | Same as `<Down>` |
+|     |  N   | \<CR>   | Executes action of current item |
+|     |  N   | C-c     | Closes the starter buffer |
 
 ---
 

@@ -78,7 +78,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- Define the information to be stored in the shada file
-vim.opt.shada = "%,'25,f1,<300,:100,/100,h"
+vim.opt.shada = "'25,f1,<300,:100,/100,h"
 
 -- Avoid using any other shell, like fish-shell for example
 vim.opt.shell = "/bin/bash"

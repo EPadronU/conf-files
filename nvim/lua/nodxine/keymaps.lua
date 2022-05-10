@@ -72,6 +72,25 @@ keymap("n", "<Leader>bd", ":Bdelete<CR>", opts)
 keymap("n", "<Leader>bD", ":bufdo :Bdelete<CR>", opts)
 keymap("n", "<Leader>bw", ":Bwipeout<CR>", opts)
 
+-- [MiniSessions] --
+vim.keymap.set("n", "<Leader>mks", function()
+  local is_a_session_active = vim.v.this_session ~= ""
+
+  local session_name = vim.fn.input {
+    prompt = "Session name: ",
+    default = (is_a_session_active                -- If there is an active session
+        and vim.v.this_session:match("^.+/(.+)$") -- then get the session filename only
+        or vim.fn.expand("%:t:r")),               -- or else, get the buffer name
+    cancelreturn = "",
+  }
+
+  if session_name == "" and is_a_session_active then
+    _G.MiniSessions.write(nil) -- Write to the current session
+  elseif session_name ~= "" then
+    _G.MiniSessions.write(session_name)
+  end
+end)
+
 -- Visual mode ------------------------------------------------------------------------------------
 -- Do not loose the current selection when shift indentation
 keymap("v", ">", ">gv", opts)
