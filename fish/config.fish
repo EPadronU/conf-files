@@ -36,6 +36,7 @@ end
 ## Login shell configuration ##################################################
 if status --is-login
     fish_add_path ~/.local/bin
+    fish_add_path ~/go/bin
 
     set -gx BROWSER (type -p firefox)
     set -gx EDITOR (type -p nvim)
