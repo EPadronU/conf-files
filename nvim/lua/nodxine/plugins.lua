@@ -122,6 +122,9 @@ return require("packer").startup({
     -- For setting the `commentstring` option based on the cursor location in the file
     use { "JoosepAlviste/nvim-ts-context-commentstring",
       requires = "nvim-treesitter/nvim-treesitter" }
+
+    -- Mini --
+    use "echasnovski/mini.nvim"
   end,
   config = {
     display = {
