@@ -8,6 +8,7 @@ end
 lsp_installer.setup {
    -- A list of servers to automatically install if they're not already installed
   ensure_installed = {
+    "clangd",
     "emmet_ls",
     "jdtls",
     "sumneko_lua",
