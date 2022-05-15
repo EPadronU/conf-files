@@ -338,6 +338,20 @@ ih
 
 ---
 
+|     | mini.indentscope |||
+|     | Mode | Keymap  | Description |
+| :-  | :-:  | :-:     | :-          |
+|     |  N   | [i      | Navigate to the header of the current indent scope |
+|     |  N   | ]i      | Navigate to the footer of the current indent scope |
+
+ii
+: A custom __*text object*__ representing the current indent scope, no borders included |
+
+ai
+: A custom __*text object*__ representing the current indent scope, borders included |
+
+---
+
 |     | Plugin |||
 |     | Mode | Keymap  | Description |
 | :-  | :-:  | :-:     | :-          |
