@@ -39,10 +39,22 @@ starter.setup {
   -- If `nil` (default), default items will be used (see |mini.starter|).
   items = {
     starter.sections.builtin_actions(),
-    starter.sections.recent_files(5, true, false),
-    starter.sections.recent_files(5, false, true),
+    function() -- My own custom `Telescope` section
+      return {
+        {action = "Telescope find_files", name = "Files", section = "Telescope"},
+        {action = "Telescope live_grep", name = "Live grep", section = "Telescope"},
+        {action = "Telescope git_commits", name = "Commits", section = "Telescope"},
+        {action = "Telescope git_status", name = "Status", section = "Telescope"},
+      }
+    end,
+    starter.sections.recent_files(3, true, false),
+    starter.sections.recent_files(6, false, true),
     starter.sections.sessions(10, true),
-    starter.sections.telescope(),
+    function() -- My own custom `Packer` section
+      return {
+        {action = "PackerSync", name = "Sync", section = "Packer"},
+      }
+    end,
   },
 
   -- Header to be displayed before items. Converted to single string via
@@ -60,7 +72,7 @@ starter.setup {
   -- |mini.starter| and |MiniStarter.content| for more details).
   content_hooks = {
     starter.gen_hook.adding_bullet("❯ "),
-    starter.gen_hook.indexing("all", { "Builtin actions", "Sessions", "Telescope" }),
+    starter.gen_hook.indexing("all", { "Builtin actions", "Sessions", "Telescope", "Packer" }),
     starter.gen_hook.aligning("center", "center"),
   },
 
