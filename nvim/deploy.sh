@@ -5,17 +5,27 @@ configuration_files_absolute_path=$(dirname $(readlink -f $0))
 
 # Try to respect the XDG standard for the target directory
 if [ -n $XDG_CONFIG_HOME ]; then
-  target_directory=$XDG_CONFIG_HOME
+  configuration_target_directory=$XDG_CONFIG_HOME
 else
-  target_directory=$HOME/.config
+  configuration_target_directory=$HOME/.config
+fi
+
+# Try to respect the XDG standard for the data directory
+if [ -n $XDG_DATA_HOME ]; then
+  data_target_directory=$XDG_DATA_HOME
+else
+  data_target_directory=$HOME/.local/share
 fi
 
 # Particular target directory for these configuration files
-target_directory=$target_directory/nvim
+configuration_target_directory=$configuration_target_directory/nvim
 
 # Create the target directory if it doesn't exist
-mkdir -vp $target_directory
+mkdir -vp $configuration_target_directory
+mkdir -vp $data_target_directory
 
 # Create the symlinks
-ln -vis $configuration_files_absolute_path/init.lua $target_directory
-ln -vis $configuration_files_absolute_path/lua $target_directory
+ln -vis $configuration_files_absolute_path/init.lua $configuration_target_directory
+ln -vis $configuration_files_absolute_path/lua $configuration_target_directory
+ln -vis $configuration_files_absolute_path/data/air.css $data_target_directory
+ln -vis $configuration_files_absolute_path/data/ros-pine.css $data_target_directory/syntax-highlight-theme.css
