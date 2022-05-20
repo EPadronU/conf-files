@@ -1,0 +1,205 @@
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #008080;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+html {
+  font-size: 14px;
+  font-family: 'Noto Sans';
+}
+
+p,
+.air-p {
+  font-size: 1rem;
+}
+
+h1,
+.air-h1,
+h2,
+.air-h2,
+h3,
+.air-h3,
+h4,
+.air-h4,
+h5,
+.air-h5,
+h6,
+.air-h6 {
+  font-weight: inherit;
+  margin: 1.8rem auto 0.2rem auto;
+  padding-bottom: 0.2rem;
+}
+
+h1,
+.air-h1 {
+  font-size: 3rem;
+  margin: 0 auto 2rem auto;
+}
+
+h2,
+.air-h2 {
+  border: solid #AAA;
+  border-width: 0 0 2px 0;
+  font-size: 2.6rem;
+}
+
+h3,
+.air-h3 {
+  border: dotted #AAA;
+  border-width: 0 0 2px 0;
+  font-size: 2.2rem;
+}
+
+h4,
+.air-h4 {
+  border: dotted #AAA;
+  border-width: 0 0 2px 0;
+  font-size: 1.8rem;
+}
+
+h5,
+.air-h5 {
+  font-size: 1.4rem;
+}
+
+h6,
+.air-h6 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+small,
+.air-small {
+  font-size: 0.8em;
+}
+
+/* https://github.com/mrmrs/fluidity */
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+body {
+  color: #222;
+  margin: 2rem auto 1rem auto;
+  max-width: 80%;
+}
+
+figure, figure caption {
+  color: #777;
+  text-align: center;
+}
+
+img {
+  margin: 0 auto;
+  width: 400px;
+}
+
+a,
+a:visited {
+  color: #008080;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #00A0A0;
+}
+
+pre {
+  background-color: #fafafa;
+  padding: 0 1rem 0 1rem;
+  text-align: left;
+}
+
+blockquote {
+  margin: 0;
+  border-left: 5px solid #008080;
+  font-style: italic;
+  padding: 0.1em 1.33em;
+  text-align: left;
+}
+
+ul,
+ol,
+li {
+  text-align: left;
+}
+
+dl {
+  background-color: #EEE;
+  border-radius: 8px 0 8px 0;
+  padding: 0.4rem 0.8rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+p {
+  color: #333;
+  line-height: 1.4em;
+}
