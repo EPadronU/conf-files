@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
 # Get the current location of the configuration files
 configuration_files_absolute_path=$(dirname $(readlink -f $0))
 
@@ -13,14 +11,10 @@ else
 fi
 
 # Particular target directory for these configuration files
-target_directory=$target_directory/fish
+target_directory=$target_directory/X11
 
 # Create the target directory if it doesn't exist
 mkdir -vp $target_directory
 
 # Create the symlinks
-ln -vis $configuration_files_absolute_path/config.fish $target_directory
-ln -vis $configuration_files_absolute_path/fish_plugins $target_directory
-ln -vis $configuration_files_absolute_path/conf.d $target_directory
-ln -vis $configuration_files_absolute_path/functions $target_directory
-ln -vis $configuration_files_absolute_path/completions $target_directory
+ln -vis $configuration_files_absolute_path/XCompose $target_directory

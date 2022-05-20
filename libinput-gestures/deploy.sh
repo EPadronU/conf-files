@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# Get the current location of the configuration files
 configuration_files_absolute_path=$(dirname $(readlink -f $0))
 
-ln -vis $configuration_files_absolute_path/configuration $HOME/.config/libinput-gestures.conf
+# Try to respect the XDG standard for the target directory
+if [ -n $XDG_CONFIG_HOME ]; then
+  target_directory=$XDG_CONFIG_HOME
+else
+  target_directory=$HOME/.config
+fi
+
+# Create the target directory if it doesn't exist
+mkdir -vp $target_directory
+
+# Create the symlinks
+ln -vis $configuration_files_absolute_path/libinput-gestures.conf $target_directory
