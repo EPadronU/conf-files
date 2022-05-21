@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# Colors and styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RESET='\u001b[0m'
+BOLD='\u001b[1m'
+UNDERLINE='\u001b[4m'
+BLINK='\u001b[5m'
+REVERSED='\u001b[7m'
+CONCELED='\u001b[8m'
+
+BLACK='\u001b[30m'
+RED='\u001b[31m'
+GREEN='\u001b[32m'
+ORANGE='\u001b[33m'
+BLUE='\u001b[34m'
+MAGENTA='\u001b[35m'
+CYAN='\u001b[36m'
+LIGHT_GRAY='\u001b[37m'
+
+BACKGROUND_BLACK='\u001b[40m'
+BACKGROUND_RED='\u001b[41m'
+BACKGROUND_GREEN='\u001b[42m'
+BACKGROUND_ORANGE='\u001b[43m'
+BACKGROUND_BLUE='\u001b[44m'
+BACKGROUND_MAGENTA='\u001b[45m'
+BACKGROUND_CYAN='\u001b[46m'
+BACKGROUND_LIGHT_GRAY='\u001b[47m'
+
+BACKGROUND_DARK_GRAY='\u001b[100m'
+BACKGROUND_LIGHT_RED='\u001b[101m'
+BACKGROUND_LIGHT_GREEN='\u001b[102m'
+BACKGROUND_YELLOW='\u001b[103m'
+BACKGROUND_LIGHT_BLUE='\u001b[104m'
+BACKGROUND_LIGHT_PURPLE='\u001b[105m'
+BACKGROUND_TEAL='\u001b[106m'
+BACKGROUND_WHITE='\u001b[107m'
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Info ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#disk_usage=$(df -h -x aufs -x tmpfs -x overlay --total 2>/dev/null | tail -1)
+disk_usage=$(df -h | grep -E '/$')
+disk_total=$(awk '{print $2}' <<< "${disk_usage}")
+disk_used=$(awk '{print $3}' <<< "${disk_usage}")
+disk_per=$(awk '{print $5}' <<< "${disk_usage}")
+
+memory_usage=$(free -h | grep '^Mem')
+memory_total=$(awk '{print $2}' <<< "${memory_usage}")
+memory_used=$(awk '{print $3}' <<< "${memory_usage}")
+
+swap_usage=$(free -h | grep '^Swap')
+swap_total=$(awk '{print $2}' <<< "${swap_usage}")
+swap_used=$(awk '{print $3}' <<< "${swap_usage}")
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Output ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+echo -e "    ${BOLD}${RED}uptime${RESET} ${BLACK}‧${RESET} ${BOLD}$(uptime -p | cut -f 2- -d ' ')${RESET}"
+#echo -e "    ${BLUE}kernel${RESET} ${BLACK}‧${RESET} $(uname -p) $(uname -sr)"
+echo -e "    ${BLUE}kernel${RESET} ${BLACK}‧${RESET} $(lscpu | grep 'Model name:' | awk '{$1=$2=""; gsub(/^[ \\t]+/, "", $0); print $0}') $(uname -sr)"
+echo -e "     ${BLACK}shell${RESET} ${BLACK}‧${RESET} $(basename $SHELL)"
+echo -e "    ${RED}distro${BLACK} ${BLACK}‧${RESET} $(lsb_release -is) $(lsb_release -rs) $(lsb_release -cs)"
+echo -e "   ${GREEN}desktop${BLACK} ${BLACK}‧${RESET} $XDG_CURRENT_DESKTOP"
+echo -e "  ${BOLD}${ORANGE}packages${RESET} ${BLACK}‧${RESET} $(pacman -Qq | wc -l)"
+echo -e "${CYAN}resolution${RESET} ${BLACK}‧${RESET} $(xdpyinfo | awk '/^ +dimensions/ {print $2}')"
+echo -e "      ${MAGENTA}disk${RESET} ${BLACK}‧${RESET} $disk_used out of $disk_total (${BOLD}$disk_per${RESET})"
+echo -e "    ${ORANGE}memory${RESET} ${BLACK}‧${RESET} $memory_used out of $memory_total"
+echo -e "      ${BOLD}${BLUE}swap${RESET} ${BLACK}‧${RESET} $swap_used out of $swap_total"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
