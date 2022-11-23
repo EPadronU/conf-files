@@ -59,7 +59,7 @@ echo -e "    ${BLUE}kernel${RESET} ${BLACK}‧${RESET} $(lscpu | grep 'Model nam
 echo -e "     ${BLACK}shell${RESET} ${BLACK}‧${RESET} $(basename $SHELL)"
 echo -e "    ${RED}distro${BLACK} ${BLACK}‧${RESET} $(lsb_release -is) $(lsb_release -rs) $(lsb_release -cs)"
 echo -e "   ${GREEN}desktop${BLACK} ${BLACK}‧${RESET} $XDG_CURRENT_DESKTOP"
-echo -e "  ${BOLD}${ORANGE}packages${RESET} ${BLACK}‧${RESET} $(pacman -Qq | wc -l)"
+echo -e "  ${BOLD}${ORANGE}packages${RESET} ${BLACK}‧${RESET} $(dnf list installed | wc -l)"
 echo -e "${CYAN}resolution${RESET} ${BLACK}‧${RESET} $(xdpyinfo | awk '/^ +dimensions/ {print $2}')"
 echo -e "      ${MAGENTA}disk${RESET} ${BLACK}‧${RESET} $disk_used out of $disk_total (${BOLD}$disk_per${RESET})"
 echo -e "    ${ORANGE}memory${RESET} ${BLACK}‧${RESET} $memory_used out of $memory_total"
