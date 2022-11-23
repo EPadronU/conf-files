@@ -43,9 +43,6 @@ nvim_tree.setup {
     -- Width of the window, can be either a `%` string or a number representing columns.
     width = 30,
 
-    -- Height of the window, can be either a `%` string or a number representing rows
-    height = 30,
-
     -- Side of the tree.
     -- One of 'left', 'right', 'bottom' or 'top'
     side = "right",
@@ -232,7 +229,7 @@ if vim.fn["executable"]("kioclient") then
 
   local function send_to_trash_with_kioclient(uri)
     vim.fn.jobstart(string.format("kioclient move '%s' trash:/", uri), {
-      detach = true, on_exit = require("nvim-tree.actions.reloaders").reload_explorer
+      detach = true, on_exit = require("nvim-tree.actions.reloaders.reloaders").reload_explorer
     })
   end
 

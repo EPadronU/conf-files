@@ -7,7 +7,7 @@ function cleanup -d 'Clean history & cache files'
     end
 
     set -l files (find $HOME -maxdepth 2 -type f -iname '*history')
-    set -l shada_file ~/.local/share/nvim/shada/main.shada
+    set -l shada_file ~/.local/state/nvim/shada/main.shada
 
     if set -q _flag_a; or set -q _flag_t
         echo yes | history --clear >/dev/null
