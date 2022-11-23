@@ -1,13 +1,16 @@
 [Desktop Entry]
 DefaultProfile=NodxyWorld.profile
 
+[General]
+ConfigVersion=1
+
 [KFileDialog Settings]
 detailViewIconSize=16
 
 [KonsoleWindow]
 RememberWindowSize=false
-RemoveWindowTitleBarAndFrame=true
 ShowMenuBarByDefault=false
+ShowWindowTitleOnTitleBar=true
 
 [MainWindow]
 MenuBar=Disabled

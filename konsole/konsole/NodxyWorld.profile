@@ -18,8 +18,9 @@ LocalTabTitleFormat=%w
 Name=NodxyWorld
 Parent=FALLBACK/
 RemoteTabTitleFormat=[%u@%H]  %w
-TerminalColumns=110
+TerminalColumns=120
 TerminalMargin=2
+TerminalRows=26
 
 [Interaction Options]
 AutoCopySelectedText=true
