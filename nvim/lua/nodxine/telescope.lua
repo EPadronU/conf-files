@@ -115,5 +115,4 @@ telescope.setup {
 -- To get the extensions loaded and working with telescope, we need to call load_extension,
 -- somewhere after setup function:
 require("telescope").load_extension("fzf")
-require("telescope").load_extension("maven_search")
 require("telescope").load_extension("luasnip")

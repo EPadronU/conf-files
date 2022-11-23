@@ -45,7 +45,7 @@ end
 -- Highlight all appearances of the current keyword under the cursor
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
         " https://github.com/neovim/nvim-lspconfig/issues/379#issuecomment-707803645
@@ -84,7 +84,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-q>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>tD", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ca", "<cmd>lua vim.lsp.buf.range_code_action()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
@@ -100,7 +100,7 @@ if status_ok then
   -- Neovim's default omnifunc has basic support for serving completion candidates. nvim-cmp
   -- supports more types of completion candidates, so users must override the capabilities sent to
   -- the server such that it can provide these candidates during a completion request.
-  M.capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  M.capabilities = cmp_nvim_lsp.default_capabilities()
 else
   M.capabilities = vim.lsp.protocol.make_client_capabilities()
 end

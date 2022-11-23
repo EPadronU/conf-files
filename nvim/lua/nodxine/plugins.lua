@@ -105,9 +105,6 @@ return require("packer").startup({
     -- Native telescope sorter to significantly improve sorting performance
     use {"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
-    -- A telescope extension to search dependencies in MavenCentral
-    use "aloussase/telescope-maven-search"
-
     -- A LuaSnip snippet picker for telescope
     use "benfowler/telescope-luasnip.nvim"
 

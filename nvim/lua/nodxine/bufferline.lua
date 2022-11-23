@@ -31,7 +31,10 @@ bufferline.setup {
     -- NOTE: This plugin is designed with this icon in mind, and so changing this is NOT
     -- recommended, this is intended as an escape hatch for people who cannot bear it for whatever
     -- reason
-    indicator_icon = "▎",
+    indicator = {
+      icon = "▎",
+      style = "icon"
+    },
 
     -- The close buffer button icon
     buffer_close_icon = "",
