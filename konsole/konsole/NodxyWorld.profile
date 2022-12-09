@@ -1,8 +1,8 @@
 [Appearance]
-ColorScheme=SolarizedLight
+ColorScheme=dawnfox
 DimmValue=39
 Font=FiraCode Nerd Font Mono,12,-1,5,57,0,0,0,0,0,Medium
-TabColor=22,25,37,0
+TabColor=76,71,105
 UseFontLineChararacters=true
 
 [Cursor Options]

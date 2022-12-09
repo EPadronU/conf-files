@@ -31,8 +31,8 @@ return require("packer").startup({
     -- Allows to delete buffers without closing windows or messing up the layout
     use { "moll/vim-bbye" }
 
-    -- Solarized colorscheme written in lua for NeoVim
-    use { "shaunsingh/solarized.nvim" }
+    -- Colorscheme
+    use { "EdenEast/nightfox.nvim" }
 
     -- Preview in a browser a HTML generated version of a markdown file
     use { "euclio/vim-markdown-composer",

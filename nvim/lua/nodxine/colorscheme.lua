@@ -1,32 +1,61 @@
-local status_ok, solarized = pcall(require, "solarized")
+local status_ok, nightfox = pcall(require, "nightfox")
 
 if not status_ok then
   return
 end
 
--- Make comments italic
-vim.g.solarized_italic_comments = true
+nightfox.setup({
+  options = {
+    -- Disable setting background
+    transparent = false,
 
--- Make keywords italic
-vim.g.solarized_italic_keywords = true
+    -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+    terminal_colors = true,
 
--- Make functions italic
-vim.g.solarized_italic_functions = false
+    -- Non focused panes set to alternative background
+    dim_inactive = true,
 
--- Make variables and identifiers italic
-vim.g.solarized_italic_variables = false
+    -- Default enable value for modules
+    module_default = true,
 
--- Make sidebars and popup menus like nvim-tree and telescope have a different background
-vim.g.solarized_contrast = false
+    -- Style to be applied to different syntax groups
+    -- Value is any valid attr-list value `:help attr-list`
+    styles = {
+      comments = "NONE",
+      conditionals = "NONE",
+      constants = "NONE",
+      functions = "NONE",
+      keywords = "NONE",
+      numbers = "NONE",
+      operators = "NONE",
+      strings = "NONE",
+      types = "NONE",
+      variables = "NONE",
+    },
 
--- Enable the border between verticaly split windows visable
-vim.g.solarized_borders = true
+    -- Inverse highlight for different types
+    inverse = {
+      match_paren = false,
+      visual = false,
+      search = false,
+    },
 
--- Disable the setting of background color so that NeoVim can use your terminal background
-vim.g.solarized_disable_background = false
+    -- List of various plugins and additional options
+    modules = {
+      cmp = true,
+      --gitsign = true,
+      mini = true,
+      nvimtree = true,
+      telescope = true,
+      treesitter = true,
+    },
+  },
 
--- Enable the colorscheme
-solarized.set()
+  palettes = {},
 
--- Fix https://github.com/shaunsingh/solarized.nvim/issues/3
-vim.cmd("highlight Identifier ctermfg=13 guifg=" .. require("solarized.colors").purple)
+  specs = {},
+
+  groups = {},
+})
+
+vim.cmd("colorscheme dawnfox")
