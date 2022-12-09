@@ -1,6 +1,5 @@
 -- Set the theme
-vim.g.airline_theme = "solarized"
-vim.g.airline_solarized_bg = "light"
+vim.g.airline_theme = "base16"
 
 -- Integrate with powerline fonts
 vim.g.airline_powerline_fonts = 1

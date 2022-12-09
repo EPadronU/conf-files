@@ -56,7 +56,7 @@ swap_used=$(awk '{print $3}' <<< "${swap_usage}")
 echo -e "    ${BOLD}${RED}uptime${RESET} ${BLACK}‧${RESET} ${BOLD}$(uptime -p | cut -f 2- -d ' ')${RESET}"
 #echo -e "    ${BLUE}kernel${RESET} ${BLACK}‧${RESET} $(uname -p) $(uname -sr)"
 echo -e "    ${BLUE}kernel${RESET} ${BLACK}‧${RESET} $(lscpu | grep 'Model name:' | awk '{$1=$2=""; gsub(/^[ \\t]+/, "", $0); print $0}') $(uname -sr)"
-echo -e "     ${BLACK}shell${RESET} ${BLACK}‧${RESET} $(basename $SHELL)"
+echo -e "     ${BOLD}shell${BLUE} ${BLACK}‧${RESET} $(basename $SHELL)"
 echo -e "    ${RED}distro${BLACK} ${BLACK}‧${RESET} $(lsb_release -is) $(lsb_release -rs) $(lsb_release -cs)"
 echo -e "   ${GREEN}desktop${BLACK} ${BLACK}‧${RESET} $XDG_CURRENT_DESKTOP"
 echo -e "  ${BOLD}${ORANGE}packages${RESET} ${BLACK}‧${RESET} $(dnf list installed | wc -l)"
