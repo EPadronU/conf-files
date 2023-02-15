@@ -1,17 +1,17 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 
 if not status_ok then
-  vim.notify("`nvim-lsp-installer` plugin not found!")
+  vim.notify("`mason-lspconfig` plugin not found!")
   return
 end
 
-lsp_installer.setup {
+mason_lspconfig.setup {
    -- A list of servers to automatically install if they're not already installed
   ensure_installed = {
     "clangd",
     "emmet_ls",
     "jdtls",
-    "sumneko_lua",
+    "lua_ls",
     "yamlls",
   },
 
@@ -57,7 +57,7 @@ lsp_installer.setup {
   },
 
   -- The directory in which to install all servers
-  install_root_dir = require("nvim-lsp-installer.core.path").concat {
+  install_root_dir = require("mason-core.path").concat {
     vim.fn.stdpath "data", "lsp_servers"
   },
 

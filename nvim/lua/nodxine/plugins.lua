@@ -72,7 +72,8 @@ return require("packer").startup({
     use "neovim/nvim-lspconfig"
 
     -- Allows to seamlessly install LSP servers locally
-    use { "williamboman/nvim-lsp-installer", requires = "neovim/nvim-lspconfig" }
+    use { "williamboman/mason-lspconfig.nvim",
+      requires = { "neovim/nvim-lspconfig",  "williamboman/mason.nvim" } }
 
     -- Extensions for the built-in LSP support for eclipse.jdt.ls
     use { "mfussenegger/nvim-jdtls", requires = "neovim/nvim-lspconfig" }
