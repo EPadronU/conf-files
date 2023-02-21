@@ -1,5 +1,5 @@
 -- File-type-specific configuration ---------------------------------------------------------------
-vim.cmd[[
+vim.cmd [[
   " autocmd group for the following ':autocmd' commands
   augroup autocmds.lua
 

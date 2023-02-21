@@ -1,21 +1,21 @@
-require "nodxine.options"
-require "nodxine.autocmds"
-require "nodxine.keymaps"
-require "nodxine.plugins"
-require "nodxine.colorscheme"
-require "nodxine.airline"
-require "nodxine.mason"
-require "nodxine.lsp"
-require "nodxine.cmp"
-require "nodxine.telescope"
-require "nodxine.autopairs"
-require "nodxine.comment"
-require "nodxine.gitsigns"
-require "nodxine.treesitter"
-require "nodxine.nvim-tree"
-require "nodxine.bufferline"
-require "nodxine.toggleterm"
-require "nodxine.null-ls"
-require "nodxine.mini-sessions"
-require "nodxine.mini-starter"
-require "nodxine.mini-indentscope"
+--[[ lazy.nvim is a modern plugin manager for Neovim ]]
+-- Where the lazy.nvim files are (or will be) located at
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+-- Bootstrap lazy.nvim
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+
+-- Load lazy.nvim
+vim.opt.rtp:prepend(lazypath)
+
+-- Load my custom setup
+require("nodxine")

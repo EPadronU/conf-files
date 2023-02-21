@@ -36,7 +36,7 @@ lspconfig.yamlls.setup {
     }
   },
 
-  on_attach = require("nodxine.lsp.handlers").on_attach,
+  on_attach = require("nodxine.plugins.lsp.handlers").on_attach,
 
-  capabilities = require("nodxine.lsp.handlers").capabilities,
+  capabilities = require("nodxine.plugins.lsp.handlers").capabilities,
 }
