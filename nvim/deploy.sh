@@ -27,5 +27,6 @@ mkdir -vp $data_target_directory
 # Create the symlinks
 ln -vis $configuration_files_absolute_path/init.lua $configuration_target_directory
 ln -vis $configuration_files_absolute_path/lua $configuration_target_directory
+ln -vis $configuration_files_absolute_path/ftplugin $configuration_target_directory
 ln -vis $configuration_files_absolute_path/data/air.css $data_target_directory
 ln -vis $configuration_files_absolute_path/data/ros-pine.css $data_target_directory/syntax-highlight-theme.css
