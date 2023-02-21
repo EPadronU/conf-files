@@ -1,16 +1,26 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
+local status_ok, jdtls = pcall(require, "jdtls")
 
 if not status_ok then
   return
 end
 
-local jdtls_status_ok, jdtls = pcall(require, "jdtls")
+local path = require("jdtls.path")
 
-if not jdtls_status_ok then
-  return
-end
+local ms_plugins_path = path.join {
+  "~",
+  ".m2",
+  "repository",
+  "com",
+  "microsoft",
+  "java",
+  "**",
+  "*plug*.jar" }
 
-lspconfig.jdtls.setup {
+jdtls.start_or_attach {
+  cmd = { path.join { vim.fn.stdpath("data"), "mason", "bin", "jdtls" } },
+
+  root_dir = require('jdtls.setup').find_root({ ".git", "pom.xml", "mvnw", "gradlew" }),
+
   settings = {
     java = {
       -- Enable/disable the 'auto build'
@@ -78,8 +88,8 @@ lspconfig.jdtls.setup {
       implementationsCodeLens = { enabled = true },
 
       import = {
-          -- Enable/disable the Maven importer
-          maven = { enabled = true },
+        -- Enable/disable the Maven importer
+        maven = { enabled = true },
       },
       -- Max simultaneous project builds
       maxConcurrentBuilds = 4,
@@ -115,7 +125,9 @@ lspconfig.jdtls.setup {
     -- You need to extend the `bundles` with paths to jar files
     -- if you want to use additional eclipse.jdt.ls plugins.
     -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
-    bundles = {},
+    bundles = {
+      table.unpack(vim.split(vim.fn.glob(ms_plugins_path), "\n")),
+    },
   },
 
   on_attach = function(client, bufnr)
