@@ -14,8 +14,12 @@ lspconfig.lua_ls.setup {
       workspace = {
         library = {
           -- Make the server aware of Neovim runtime files
-          vim.api.nvim_get_runtime_file("", true),
-        }
+          table.unpack(vim.api.nvim_get_runtime_file("", true)),
+
+          -- Make the server aware of lazy.nvim-manage plugins
+          table.unpack(vim.split(vim.fn.glob(vim.fn.stdpath("data") .. "/lazy/*"), "\n"))
+        },
+        checkThirdParty = false,
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
@@ -24,7 +28,7 @@ lspconfig.lua_ls.setup {
     }
   },
 
-  on_attach = require("nodxine.lsp.handlers").on_attach,
+  on_attach = require("nodxine.plugins.lsp.handlers").on_attach,
 
-  capabilities = require("nodxine.lsp.handlers").capabilities,
+  capabilities = require("nodxine.plugins.lsp.handlers").capabilities,
 }

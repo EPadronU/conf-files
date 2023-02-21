@@ -121,7 +121,7 @@ lspconfig.jdtls.setup {
   on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
 
-    require("nodxine.lsp.handlers").on_attach(client, bufnr)
+    require("nodxine.plugins.lsp.handlers").on_attach(client, bufnr)
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>oi", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>xv", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
@@ -135,5 +135,5 @@ lspconfig.jdtls.setup {
     require("jdtls.setup").add_commands()
   end,
 
-  capabilities = require("nodxine.lsp.handlers").capabilities,
+  capabilities = require("nodxine.plugins.lsp.handlers").capabilities,
 }

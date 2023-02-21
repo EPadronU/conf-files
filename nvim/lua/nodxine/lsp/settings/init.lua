@@ -1,5 +1,0 @@
-require "nodxine.lsp.settings.emmet"
-require "nodxine.lsp.settings.jdtls"
-require "nodxine.lsp.settings.lua_ls"
-require "nodxine.lsp.settings.yamlls"
-require "nodxine.lsp.settings.clangd"

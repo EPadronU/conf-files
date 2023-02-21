@@ -23,9 +23,9 @@ local clangd_flags = {
 }
 
 lspconfig.clangd.setup {
-  cmd = { "clangd", unpack(clangd_flags) },
+  cmd = { "clangd", table.unpack(clangd_flags) },
 
-  on_attach = require("nodxine.lsp.handlers").on_attach,
+  on_attach = require("nodxine.plugins.lsp.handlers").on_attach,
 
-  capabilities = require("nodxine.lsp.handlers").capabilities,
+  capabilities = require("nodxine.plugins.lsp.handlers").capabilities,
 }
