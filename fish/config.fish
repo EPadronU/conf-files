@@ -50,6 +50,8 @@ if status --is-login
     set -gx VISUAL (type -p nvim)
     set -gx EDITOR $VISUAL
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    set -gx MANROFFOPT "-c"
+    set -gx SDKMAN_DIR $HOME/.sdkman
 
     # Cleanup my $HOME directory
     set -gx CARGO_HOME $XDG_DATA_HOME/cargo
@@ -61,6 +63,7 @@ if status --is-login
     set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
     set -gx XCOMPOSEFILE $XDG_CONFIG_HOME/X11/XCompose
     set -gx _JAVA_OPTIONS -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
+    set -gx XCURSOR_PATH /usr/share/icons:$XDG_DATA_HOME/icons
 
     # PATH
     fish_add_path ~/.local/bin
