@@ -14,6 +14,12 @@ ShowWindowTitleOnTitleBar=true
 
 [MainWindow]
 MenuBar=Disabled
+None-1=None-1
+None-1 Height 1920x1080 None-1=509
+None-1 Width 1920x1080 None-1=1214
+None-1 Window-Maximized 1920x1080 None-1=true
+None-1 XPosition 1920x1080 None-1=351
+None-1 YPosition 1920x1080 None-1=323
 StatusBar=Disabled
 ToolBarsMovable=Disabled
 
