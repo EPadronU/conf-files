@@ -13,7 +13,7 @@ function sdk-use -d "Use the lattest installed version of a candidate given its 
     set -l candidate $argv[1]
     set -l major_version $argv[2]
 
-    set -l path ~/.sdkman/candidates/$candidate
+    set -l path $SDKMAN_DIR/candidates/$candidate
 
     if test ! \( -d $path \)
         echo "No matching candidate found"
