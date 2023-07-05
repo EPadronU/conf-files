@@ -108,12 +108,5 @@ return {
         -- },
       },
     }
-
-    -- Enable Treesitter-based folding
-    vim.opt.foldmethod = "expr"
-    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
-    -- Show all folds opened by default
-    vim.opt.foldenable = false
   end,
 }

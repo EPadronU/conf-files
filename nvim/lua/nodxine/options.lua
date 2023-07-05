@@ -142,3 +142,16 @@ vim.opt.wildmode = { "longest:full", "full" }
 
 -- Don't wrap long lines so that one has to scroll horizontally to see the rest of them
 vim.opt.wrap = false
+
+-- Folding options for the UFO plugin
+-- When and how to draw the foldcolumn
+vim.opt.foldcolumn = '0'
+
+-- Folds with a higher level will be closed
+vim.opt.foldlevel = 99 -- Using ufo provider need a large value
+
+-- Sets 'foldlevel' when starting to edit another buffer in a window
+vim.opt.foldlevelstart = 99
+
+-- When off, all folds are open
+vim.opt.foldenable = true
