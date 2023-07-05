@@ -83,7 +83,7 @@ return {
         -- Determine the location where to calculate commentstring from
         local location = nil
 
-        if ctx.ctype == U.ctype.block then
+        if ctx.ctype == U.ctype.blockwise then
           location = require("ts_context_commentstring.utils").get_cursor_location()
         elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
           location = require("ts_context_commentstring.utils").get_visual_start_location()
@@ -91,7 +91,7 @@ return {
 
         return require("ts_context_commentstring.internal").calculate_commentstring {
           -- Detemine whether to use linewise or blockwise commentstring
-          key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
+          key = ctx.ctype == U.ctype.linewise and "__default" or "__multiline",
           location = location,
         }
       end,
@@ -110,7 +110,7 @@ return {
 
     local map_opt = { noremap = true, silent = true }
 
-    function _G.comment_and_duplicate(vmode)
+    function _G.__gdc(vmode)
       local range = U.get_region(vmode)
       local lines = U.get_lines(range)
 
@@ -131,7 +131,7 @@ return {
     end
 
     -- Mappings
-    map("n", "gdc", "<CMD>lua comment_and_duplicate()<CR>", map_opt)
-    map("x", "gdc", "<ESC><CMD>lua comment_and_duplicate(vim.fn.visualmode())<CR>", map_opt)
+    map("n", "gdc", "<CMD>lua __gdc()<CR>", map_opt)
+    map("x", "gdc", "<ESC><CMD>lua __gdc(vim.fn.visualmode())<CR>", map_opt)
   end,
 }

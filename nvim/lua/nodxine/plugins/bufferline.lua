@@ -2,8 +2,6 @@ return {
   -- A buffer line (with tabpage integration) for Neovim built using lua
   "akinsho/bufferline.nvim",
 
-  commit = "9abbcedd5164d8fead4e2f7a39ed00f5e5e759f2",
-
   dependencies = { "kyazdani42/nvim-web-devicons" },
 
   opts = {
@@ -84,7 +82,7 @@ return {
       -- level is a string "error" | "warning"
       -- this should return a string
       -- NOTE: this will be called a lot so don't do any heavy processing here
-      diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      diagnostics_indicator = function(_, _, diagnostics_dict, _)
         local diagnostic_line = ""
 
         for e, n in pairs(diagnostics_dict) do
@@ -148,9 +146,6 @@ return {
 
       -- Show the buffer close icon
       show_buffer_close_icons = false,
-
-      -- Whether or not an unrecognised filetype should show a default icon
-      show_buffer_default_icon = true,
 
       -- Show the tab close icon
       show_close_icon = false,

@@ -25,13 +25,6 @@ return {
       -- Opens in place of the unnamed
       hijack_unnamed_buffer_when_opening = false,
 
-      -- Will ignore the buffer, when deciding to open the tree on setup
-      ignore_buffer_on_setup = false,
-
-      -- Will automatically open the tree when running setup if startup buffer is a directory, is empty
-      -- or is unnamed
-      open_on_setup = false,
-
       -- Opens the tree automatically when switching tabpage or opening a new tabpage if the tree was
       -- previously open
       open_on_tab = false,
@@ -103,9 +96,6 @@ return {
         update_cwd = false,
         ignore_list = {},
       },
-
-      -- List of filetypes that will make |open_on_setup| not open
-      ignore_ft_on_setup = {},
 
       -- Configuration options for the system open command
       system_open = {
@@ -308,4 +298,19 @@ return {
       end)
     end
   end,
+
+  init = function()
+    local open_nvim_tree = function(data)
+      -- Buffer is a directory
+      if vim.fn.isdirectory(data.file) == 1 then
+        -- Change to the directory
+        vim.cmd.cd(data.file)
+
+        -- Open the tree
+        require("nvim-tree.api").tree.open()
+      end
+    end
+
+    vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+  end
 }
