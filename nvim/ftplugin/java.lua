@@ -143,8 +143,6 @@ jdtls.start_or_attach {
     vim.api.nvim_buf_set_keymap(bufnr, "v", "<Leader>xv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "v", "<Leader>xc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "v", "<Leader>xm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
-
-    require("jdtls.setup").add_commands()
   end,
 
   capabilities = require("nodxine.plugins.lsp.handlers").capabilities,

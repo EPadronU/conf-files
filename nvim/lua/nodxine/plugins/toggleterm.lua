@@ -2,10 +2,6 @@ return {
   -- Persist and toggle multiple terminals during an editing session
   "akinsho/toggleterm.nvim",
 
-  keys = {
-    { [[<c-\>]], "<CMD>ToggleTerm<CR>", desc = "Toggle term" }
-  },
-
   config = function()
     require("toggleterm").setup {
       -- Can be a number or function which is passed the current terminal
@@ -100,18 +96,18 @@ return {
 
     local jshell = Terminal:new({ cmd = "jshell", hidden = true })
 
-    function _G.jshell_toggle()
+    function _G._jshell_toggle()
       jshell:toggle()
     end
 
-    vim.cmd [[ command! JShellToggle execute "lua jshell_toggle()" ]]
+    vim.cmd [[ command! JShellToggle execute "lua _jshell_toggle()" ]]
 
-    local btop = Terminal:new({ cmd = "btop", hidden = true })
+    local htop = Terminal:new({ cmd = "htop", hidden = true })
 
-    function _G.btop_toggle()
-      btop:toggle()
+    function _G._htop_toggle()
+      htop:toggle()
     end
 
-    vim.cmd [[ command! BtopToggle execute "lua btop_toggle()" ]]
+    vim.cmd [[ command! HtopToggle execute "lua _htop_toggle()" ]]
   end,
 }
