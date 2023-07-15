@@ -126,7 +126,7 @@ jdtls.start_or_attach {
     -- if you want to use additional eclipse.jdt.ls plugins.
     -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
     bundles = {
-      table.unpack(vim.split(vim.fn.glob(ms_plugins_path), "\n")),
+      unpack(vim.split(vim.fn.glob(ms_plugins_path), "\n")),
     },
   },
 
