@@ -1,7 +1,7 @@
 [user]
 	name = Edinson E. Padrón Urdaneta
 	email = edinson.padron+git@posteo.net
-	signingkey = 265FCB6416CCD17B
+	signingkey = E8CF0F02FCBE960E
 [color]
 	ui = auto
 [commit]
@@ -16,7 +16,7 @@
 	tool = bat
 	indentHeuristic = true
 [gpg]
-	program = gpg2
+	program = gpg
 [init]
 	defaultBranch = master
 [log]
