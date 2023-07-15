@@ -14,10 +14,10 @@ lspconfig.lua_ls.setup {
       workspace = {
         library = {
           -- Make the server aware of Neovim runtime files
-          table.unpack(vim.api.nvim_get_runtime_file("", true)),
+          unpack(vim.api.nvim_get_runtime_file("", true)),
 
           -- Make the server aware of lazy.nvim-manage plugins
-          table.unpack(vim.split(vim.fn.glob(vim.fn.stdpath("data") .. "/lazy/*"), "\n"))
+          unpack(vim.split(vim.fn.glob(vim.fn.stdpath("data") .. "/lazy/*"), "\n"))
         },
         checkThirdParty = false,
       },
