@@ -57,13 +57,6 @@ return {
         -- Show diagnostic sign column
         -- One of "yes" or "no"
         signcolumn = "yes",
-
-        -- Configuration options for keymaps
-        mappings = {
-          -- Will use only the provided user mappings and not the default otherwise, extends the
-          -- default mappings with the provided user mappings
-          custom_only = false,
-        },
       },
       -- UI rendering setup
       renderer = {

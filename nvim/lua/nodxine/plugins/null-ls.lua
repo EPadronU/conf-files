@@ -22,7 +22,7 @@ return {
           extra_args = function(params)
             if params.ft == "java" then
               return {
-                "--config", vim.fn.expand("~/.local/share/semgrep/java.semgrep.yaml"),
+                --"--config", vim.fn.expand("~/.local/share/semgrep/java.semgrep.yaml"),
                 "--config", "p/java",
                 "--config", "p/secrets",
                 "--config", "r/java.log4j.security.log4j-message-lookup-injection.log4j-message-lookup-injection",
