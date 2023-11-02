@@ -1,0 +1,39 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+
+[DetailsMode]
+HighlightEntireRow=false
+SidePadding=0
+
+[General]
+BrowseThroughArchives=true
+RememberOpenedTabs=false
+RenameInline=false
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2023,7,14,14,26,3.277
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[KPropertiesDialog]
+2 screens: Height=616
+2 screens: Width=482
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+ConfirmDelete=true
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,webarchivethumbnail
+
+[ViewPropertiesDialog]
+2 screens: Height=584
+2 screens: Width=380

@@ -1,0 +1,46 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=Better window placement
+ignoregeometry=true
+ignoregeometryrule=2
+minsize=0,0
+minsizerule=2
+placementrule=2
+types=1
+wmclass=^(?!krunner)
+wmclassmatch=3
+
+[2]
+Description=Better window placement
+ignoregeometry=true
+ignoregeometryrule=2
+minsize=0,0
+minsizerule=2
+placementrule=2
+types=1
+wmclass=^(?!krunner)
+wmclassmatch=3
+
+[5e2e42a5-14a0-4ac5-80fe-f29ef97f4366]
+Description=Better window placement
+ignoregeometry=true
+ignoregeometryrule=2
+minsizerule=2
+placementrule=2
+types=1
+wmclass=^(?!krunner)
+wmclassmatch=3
+
+[General]
+count=1
+rules=1
+
+[f25be71b-af18-4f02-87f9-9f771e315067]
+Description=Application settings for gimp
+opacityinactive=100
+opacityinactiverule=2
+wmclass=gimp
+wmclasscomplete=true
+wmclassmatch=2

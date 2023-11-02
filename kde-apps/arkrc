@@ -1,0 +1,15 @@
+[FileDialogSize]
+
+[General]
+defaultOpenAction=Open
+
+[KFileDialog Settings]
+iconViewIconSize=64
+
+[MainWindow]
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+
+[Viewer]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
