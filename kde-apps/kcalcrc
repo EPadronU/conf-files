@@ -1,0 +1,15 @@
+[Font]
+ButtonFont=FiraCode Nerd Font,10,-1,5,57,0,0,0,0,0,Medium
+DisplayFont=FiraCode Nerd Font,14,-1,5,75,0,0,0,0,0,Bold
+HistoryFont=FiraCode Nerd Font,12,-1,5,57,0,0,0,0,0,Medium
+
+[General]
+CalculatorMode=science
+
+[Grouping]
+octalGrouping=3
+
+[Precision]
+fixed=true
+fixedprecision=3
+precision=13

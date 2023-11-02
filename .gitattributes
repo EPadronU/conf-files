@@ -1,7 +1,35 @@
-# git config filter.konsole-ignore.clean "grep -Ev '^FileDialogSize|Recent |eDP|State=|RestorePositionForNextInstance|:'"
-# git config filter.konsole-ignore.smudge cat
-konsolerc filter=konsole-ignore
+# git config filter.ark-ignore.clean "grep -Ev '^(2 screens|Recent Files|Recent URLs|splitterSizes|State)'"
+# git config filter.ark-ignore.smudge cat
+arkrc filter=ark-ignore
+
+# git config filter.btop-ignore.clean "grep -Ev '^State'"
+# git config filter.btop-ignore.smudge cat
+btop.conf filter=btop-ignore
+
+# git config filter.gwenview-ignore.clean "grep -Ev '^(2 screens|MenuBar|State|\w+SplitterSizes)'"
+# git config filter.gwenview-ignore.smudge cat
+gwenviewrc filter=gwenview-ignore
+
+# git config filter.haruna-ignore.clean "grep -Ev '^(FileDialogLastLocation|LastPlayedFile|LastUrl|File|Name)'"
+# git config filter.haruna-ignore.smudge cat
+haruna.conf filter=haruna-ignore
+
+# git config filter.kate-ignore.clean "grep -Ev '^(2 screens)'"
+# git config filter.kate-ignore.smudge cat
+katerc filter=kate-ignore
 
 # git config filter.keepass-ignore.clean "grep -Ev 'Own='"
 # git config filter.keepass-ignore.smudge cat
 keepassxc.ini filter=keepass-ignore
+
+# git config filter.kdenlive-ignore.clean "grep -Ev '^(State|File|Name|2 screens|Recent URLs|Recent Files|treeviewheaders)'"
+# git config filter.kdenlive-ignore.smudge cat
+kdenlive\-flatpakrc filter=kdenlive-ignore
+
+# git config filter.konsole-ignore.clean "grep -Ev '^(FileDialogSize|Recent |eDP|State|RestorePositionForNextInstance|2 screens)'"
+# git config filter.konsole-ignore.smudge cat
+konsolerc filter=konsole-ignore
+
+# git config filter.okular-ignore.clean "grep -Ev '^(State|File|Name|2 screens|eDP|Recent URLs|Recent Files)'"
+# git config filter.okular-ignore.smudge cat
+okularrc filter=okular-ignore

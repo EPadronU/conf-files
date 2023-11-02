@@ -1,0 +1,216 @@
+MenuBar=Disabled
+
+[Audio Preview Settings]
+Autoplay=false
+
+[KFileDialog Settings]
+iconViewIconSize=64
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[Media Browser]
+Allow Expansion=false
+Decoration position=2
+Show Inline Previews=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=false
+View Style=Tree
+mediaDoubleClickImport=false
+
+[OnlineResources]
+provider=Freesound
+zoom=7
+
+[Recent Dirs]
+KdenliveClipFolder[$e]=$HOME/Videos,$HOME/Documents
+KdenliveFramesFolder[$e]=$HOME/Videos/Yonathan/,$HOME/Documents
+KdenliveProjectsFolder[$e]=$HOME/Videos/Premiere Pro Course Resources,$HOME/Videos/Boda,$HOME/Videos/Premiere Pro Course Resources/
+KdenliveUrlListParamFolder[$e]=$HOME/Videos/LUTs/,$HOME/Documents
+
+[RenderWidget]
+showoptions=true
+
+[Scope_Histogram]
+autoRefresh=true
+bEnabled=true
+gEnabled=true
+logScale=false
+rEnabled=true
+realtime=false
+rec601=false
+sEnabled=false
+yEnabled=true
+
+[Scope_RGB Parade]
+autoRefresh=true
+axis=false
+gradref=false
+paintmode=0
+realtime=false
+
+[Scope_Vectorscope]
+75PBox=false
+autoRefresh=true
+axis=false
+backgroundmode=1
+colorspace_ypbpr=false
+gain=1
+iqlines=false
+paintmode=2
+realtime=false
+
+[Scope_Waveform]
+autoRefresh=true
+paintmode=1
+realtime=true
+rec601=false
+
+[Shortcut Schemes]
+Current Scheme=Default
+
+[TitlePatterns]
+patterns=
+scale_factor=6
+
+[TitleWidget]
+background_alpha=0
+background_color=0,0,0
+dialog_geometry=AdnQywADAAAAAAeAAAAAAAAADvoAAAP1AAAHgAAAABQAAAvHAAAC6QAAAAACAAAAB4AAAAeAAAAAAAAADvoAAAP1
+font_color=255,255,255
+font_family=Kaushan Script,-1,120,5,50,0,0,0,0,0
+font_italic=false
+font_outline=10
+font_outline_color=0,0,0
+font_pixel_size=120
+font_underlined=false
+font_weight=50
+rect_background_alpha=255
+rect_background_color=0,0,0
+rect_foreground_alpha=255
+rect_foreground_color=0,0,0
+rect_line_width=0
+use_grid=false
+
+[UiSettings]
+ColorSchemePath=
+
+[bezier_spline]
+bezier_showallhandles=false
+
+[bin]
+hoverPreview=true
+
+[capture]
+audiocapturechannels=1
+decklink_capturedevice=4294967295
+decklink_extension=mov
+decklink_parameters=vcodec=dnxhd vb=145000k acodec=pcm_s16le threads=%threads
+defaultaudiocapture=0
+grab_extension=mov
+grab_fps=30
+grab_parameters=-crf 25 -vcodec libx264 -preset veryfast -threads 0
+v4l_extension=mpg
+v4l_parameters=qscale=4 ab=192k vcodec=mpeg2video acodec=mp2 threads=%threads
+
+[env]
+defaultimageapp=/home/nodxine/.local/bin/gimp.sh
+defaultprojectfolder[$e]=$HOME/Videos
+encodethreads=12
+ffmpegpath[$e]=/app/bin/ffmpeg
+ffplaypath[$e]=/app/bin/ffplay
+ffprobepath[$e]=/app/bin/ffprobe
+kdenliverendererpath[$e]=/app/bin/kdenlive_render
+lastCacheCheck=2023,10,25,12,53,47.048
+mediainfopath[$e]=/app/bin/mediainfo
+meltpath[$e]=/app/bin/melt
+mltpath[$e]=/app/share/mlt-7/profiles
+processingthreads=12
+proxythreads=8
+sameprojectfolder=true
+videotodefaultfolder=1
+
+[misc]
+checkfirstprojectclip=false
+cleanCacheMonths=1
+color_duration=00:00:01:00
+disable_effect_parameters=false
+fade_duration=00:00:01:00
+image_duration=00:00:01:00
+subtitle_duration=00:00:01:00
+tabposition=0
+title_duration=00:00:01:00
+transition_duration=00:00:01:00
+
+[project]
+SupportedHWCodecs=h264_vaapi,hevc_vaapi
+audiotracks=3
+enableproxy=true
+externalProxyProfile=./;GL;.LRV;./;GX;.MP4;./;GP;.LRV;./;GP;.MP4;./;GOPR;.LRV;./;GOPR;.MP4;./;GL;.LRV;./;GH;.MP4
+external_proxy_profile=2
+generateimageproxy=true
+generateproxy=true
+parallelrender=true
+previewextension=mp4
+previewparams=hwaccel=vaapi hwaccel_device=renderD128 hwaccel_output_format=vaapi vcodec=hevc_vaapi vb=30000k
+proxy_profile=12
+proxyextension=mov
+proxyimageminsize=1280
+proxyminsize=480
+proxyparams=-hwaccel vaapi -hwaccel_output_format vaapi -i -vf scale_vaapi=w=%width:h=-2:format=nv12,hwupload -codec:v h264_vaapi -g 1 -bf 0 -qp 26 -acodec ac3 -ab 128k
+proxyscale=480
+videotracks=3
+
+[sdl]
+blackmagic_output_device=-1
+fullscreen_monitor=1:
+preferredcomposite=qtblend
+window_background=0,54,54
+
+[settings]
+dialogSize=1915,1043
+
+[shuttle]
+shuttlebuttons=button0=monitor_pause
+
+[speech]
+whisperDevice=
+
+[timeline]
+autotrackheight=true
+headerwidth=170
+proxypreview=false
+raisepropsclips=false
+raisepropstracks=false
+raisepropstransitions=false
+seekonaddeffect=true
+trackheight=54
+
+[titles]
+titlerAlign=1
+titlerVersion=300
+
+[unmanaged]
+alwaysShowMonitorAudio=true
+consumerslist=multi,null,xgl,decklink,cbrts,qglsl,rtaudio,blipflash,avformat,xml,sdl2,sdl2_audio,jack
+default_profile=vertical_hd_30
+defaultrescaleheight=540
+defaultrescalewidth=960
+displayProjectMonitorInfo=37
+favorite_effects=volume,lift_gamma_gain,qtblend,lumaliftgaingamma,avfilter.exposure,frei0r.contrast0r,frei0r.balanc0r,frei0r.colgate,avfilter.selectivecolor,avfilter.colorbalance,frei0r.colorize,frei0r.saturat0r,avfilter.lut3d,frei0r.bezier_curves,box_blur,avfilter.cas,avfilter.gblur,avfilter.dblur,avfilter.bilateral,avfilter.colorize,avfilter.colorlevels,frei0r.levels,mask_apply,mask_start-rotoscoping,mask_start-frei0r.select0r,opencv.tracker
+guidesCategories=Category 1:0:#9b59b6,Category 2:1:#3daee9,Category 3:2:#1abc9c,Category 4:3:#1cdc9a,Category 5:4:#c9ce3b,Category 6:5:#fdbc4b,Category 7:6:#f39c1f,Category 8:7:#f47750,Category 9:8:#da4453
+mixerCollapse=true
+producerslist=abnormal,blank,color,colour,consumer,hold,loader,loader-nogl,melt,melt_file,noise,timewarp,tone,vorbis,decklink,qimage,qtext,kdenlivetitle,glaxnimate,blipflash,count,pgm,avformat,avformat-novalidate,xml,xml-string,xml-nogl,pango,pixbuf,frei0r.ising0r,frei0r.lissajous0r,frei0r.nois0r,frei0r.onecol0r,frei0r.partik0l,frei0r.plasma,frei0r.test_pat_B,frei0r.test_pat_C,frei0r.test_pat_G,frei0r.test_pat_I,frei0r.test_pat_L,frei0r.test_pat_R,framebuffer,ladspa.1416,ladspa.1885,ladspa.1881,ladspa.1047,ladspa.1050
+project_fps=30
+properties_panel_page=1
+renderProfile=VAAPI AMD H264
+showtitlebars=false
+validated_luts=/app/share/kdenlive/luts/BLUE_TINT.cube,/app/share/kdenlive/luts/CINEMATIC.cube,/app/share/kdenlive/luts/TEAL_ORANGE.cube,/app/share/kdenlive/luts/GREEN_TINT.cube,/home/nodxine/Videos/LUTs/CINEMA_3.cube,/home/nodxine/Videos/LUTs/cinematic green.cube,/home/nodxine/Videos/LUTs/colour_pop.cube,/home/nodxine/Videos/LUTs/LateAfternoonWanderlust.cube
+widgetstyle=Default
+
+[version]
+version=23.08.2
