@@ -33,3 +33,7 @@ konsolerc filter=konsole-ignore
 # git config filter.okular-ignore.clean "grep -Ev '^(State|File|Name|2 screens|eDP|Recent URLs|Recent Files)'"
 # git config filter.okular-ignore.smudge cat
 okularrc filter=okular-ignore
+
+# git config filter.obs-ignore.clean "grep -Ev '^(DockState|geometry)'"
+# git config filter.obs-ignore.smudge cat
+global.ini filter=obs-ignore
