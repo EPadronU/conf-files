@@ -59,7 +59,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Noto Sans';
 }
 
@@ -80,9 +80,38 @@ h5,
 .air-h5,
 h6,
 .air-h6 {
-  font-weight: inherit;
+  font-weight: bold;
   margin: 1.8rem auto 0.2rem auto;
   padding-bottom: 0.2rem;
+  color: #006680;
+}
+
+h1 a,
+h1 a:visited,
+.air-h1 a,
+.air-h1 a:visited,
+h2 a,
+h2 a:visited,
+.air-h2 a,
+.air-h2 a:visited,
+h3 a,
+h3 a:visited,
+.air-h3 a,
+.air-h3 a:visited,
+h4 a,
+h4 a:visited,
+.air-h4 a,
+.air-h4 a:visited,
+h5 a,
+h5 a:visited,
+.air-h5 a,
+.air-h5 a:visited,
+h6 a,
+h6 a:visited,
+.air-h6 a,
+.air-h6 a:visited {
+  color: #006680;
+  text-decoration: none;
 }
 
 h1,
@@ -145,7 +174,10 @@ textarea {
 body {
   color: #222;
   margin: 2rem auto 1rem auto;
-  max-width: 80%;
+}
+
+.markdown-body {
+  max-width: 1080px !important;
 }
 
 figure, figure caption {
@@ -154,19 +186,23 @@ figure, figure caption {
 }
 
 img {
+  border-left: 4px #FF7F7F solid;
+  border-top: 4px #FF7F7F solid;
+  border-right: 4px #008080 solid;
+  border-bottom: 4px #008080 solid;
   margin: 0 auto;
   width: 400px;
 }
 
 a,
 a:visited {
-  color: #008080;
+  color: #003380;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #00A0A0;
+  color: #7F0080;
 }
 
 pre {
