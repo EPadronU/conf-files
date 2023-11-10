@@ -3,8 +3,6 @@ FullScreen=false
 shouldShowMenuBarComingFromFullScreen=false
 shouldShowToolBarComingFromFullScreen=true
 
-[FileDialogSize]
-
 [General]
 LockSidebar=true
 ShowSidebar=false
@@ -21,7 +19,5 @@ iconViewIconSize=64
 HDMI-A-1-0 eDP=eDP
 MenuBar=Disabled
 ToolBarsMovable=Disabled
-
-[Print Preview]
 
 [Recent Files]
