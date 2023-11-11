@@ -1,3 +1,6 @@
+[CreateDialog]
+LastMimeType=application/x-7z-compressed
+
 [General]
 defaultOpenAction=Open
 
@@ -5,7 +8,6 @@ defaultOpenAction=Open
 iconViewIconSize=64
 
 [MainWindow]
-StatusBar=Disabled
 ToolBarsMovable=Disabled
 
 [Viewer]

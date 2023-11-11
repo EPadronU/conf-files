@@ -6,7 +6,11 @@ arkrc filter=ark-ignore
 # git config filter.btop-ignore.smudge cat
 btop.conf filter=btop-ignore
 
-# git config filter.gwenview-ignore.clean "grep -Ev '^(2 screens|MenuBar|State|\w+SplitterSizes)'"
+# git config filter.dolphin-ignore.clean "grep -Ev '^(2 screens)'"
+# git config filter.dolphin-ignore.smudge cat
+dolphinrc filter=dolphin-ignore
+
+# git config filter.gwenview-ignore.clean "grep -Ev '^(2 screens|MenuBar|State|\w+SplitterSize|Recent Files|Recent URLs)'"
 # git config filter.gwenview-ignore.smudge cat
 gwenviewrc filter=gwenview-ignore
 
@@ -22,7 +26,7 @@ katerc filter=kate-ignore
 # git config filter.keepass-ignore.smudge cat
 keepassxc.ini filter=keepass-ignore
 
-# git config filter.kdenlive-ignore.clean "grep -Ev '^(State|File|Name|2 screens|Recent URLs|Recent Files|treeviewheaders)'"
+# git config filter.kdenlive-ignore.clean "grep -Ev '^(State|File|Name|2 screens|Recent URLs|Recent Files|treeviewheaders|lastCacheCheck)'"
 # git config filter.kdenlive-ignore.smudge cat
 kdenlive\-flatpakrc filter=kdenlive-ignore
 

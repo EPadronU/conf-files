@@ -125,7 +125,6 @@ ffmpegpath[$e]=/app/bin/ffmpeg
 ffplaypath[$e]=/app/bin/ffplay
 ffprobepath[$e]=/app/bin/ffprobe
 kdenliverendererpath[$e]=/app/bin/kdenlive_render
-lastCacheCheck=2023,10,25,12,53,47.048
 mediainfopath[$e]=/app/bin/mediainfo
 meltpath[$e]=/app/bin/melt
 mltpath[$e]=/app/share/mlt-7/profiles
@@ -213,4 +212,4 @@ validated_luts=/app/share/kdenlive/luts/BLUE_TINT.cube,/app/share/kdenlive/luts/
 widgetstyle=Default
 
 [version]
-version=23.08.2
+version=23.08.3
