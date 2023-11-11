@@ -18,9 +18,9 @@ NavigationEndNotification=NavigationEndNotification::AlwaysWarn
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=32
-Recent Files[$e]=file:$HOME/Downloads/IMG_20190717_134550.jpg,file:$HOME/Downloads/DSC_0077-56.jpg,file:$HOME/Downloads/DSC_0048-30.jpg,file:$HOME/Downloads/DSC_0036-20.jpg,file:$HOME/Downloads/IMG_20230409_133436.jpg,file:$HOME/Downloads/IMG_20220722_172340.jpg,file:$HOME/Downloads/VID_20220721_090536.mp4,file:$HOME/Downloads/IMG_20220721_084614.jpg,file:$HOME/Downloads/IMG_20220720_093904.jpg,file:$HOME/Downloads/IMG_20220704_094426.jpg,file:$HOME/Downloads/IMG_20220109_121501.jpg,file:$HOME/Downloads/IMG_20210816_150909.jpg,file:$HOME/Downloads/IMG_20210816_150819.jpg,file:$HOME/Downloads/IMG_20210809_140702.jpg,file:$HOME/Downloads/IMG_20210722_144453_1.jpg,file:$HOME/Downloads/IMG_20201126_181311.jpg
-Recent URLs[$e]=file:$HOME/Pictures/,file:$HOME/Downloads/,file:$HOME/Pictures/Boda/
 iconViewIconSize=64
+
+[KPropertiesDialog]
 
 [MainWindow]
 1920x1080 screen: Height=1009
