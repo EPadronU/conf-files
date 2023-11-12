@@ -2,20 +2,20 @@
 
 ## Aliases ####################################################################
 ### Shell-related
-alias grep 'grep -E'
-alias sql sqlite3
-alias cat 'bat --pager=never'
-alias wget 'wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
+# alias -s grep 'grep -E'
+# alias -s sql sqlite3
+# alias -s cat 'bat --pager=never'
+# alias -s wget 'wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
 
-### Java-related
-alias mvn-generate-new-project 'mvn \
-  archetype:generate \
-  -DarchetypeArtifactId=javase-quickstart \
-  -DarchetypeGroupId=com.smartsystems'
+# ### Java-related
+# alias -s mvn-generate-new-project 'mvn \
+#   archetype:generate \
+#   -DarchetypeArtifactId=javase-quickstart \
+#   -DarchetypeGroupId=com.smartsystems'
 
-### Miscellaneous
-alias clocks 'watch -t -d -n 1 zdump America/Caracas America/Los_Angeles America/New_York'
-alias sensors 'watch -n 1 sensors'
+# ### Miscellaneous
+# alias -s clocks 'watch -t -d -n 1 zdump America/Caracas America/Los_Angeles America/New_York'
+# alias -s sensors 'watch -n 1 sensors'
 
 ## Normal-interactive shell configuration #####################################
 if status --is-interactive
