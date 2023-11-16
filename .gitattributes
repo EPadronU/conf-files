@@ -26,7 +26,7 @@ katerc filter=kate-ignore
 # git config filter.keepass-ignore.smudge cat
 keepassxc.ini filter=keepass-ignore
 
-# git config filter.kdenlive-ignore.clean "grep -Ev '^(State|File|Name|2 screens|Recent URLs|Recent Files|treeviewheaders|lastCacheCheck)'"
+# git config filter.kdenlive-ignore.clean "grep -Ev '^(State|File|Name|2 screens|Recent URLs|Recent Files|treeviewheaders|lastCacheCheck|Kdenlive.+Folder|project_fps)'"
 # git config filter.kdenlive-ignore.smudge cat
 kdenlive\-flatpakrc filter=kdenlive-ignore
 
