@@ -69,7 +69,7 @@ realtime=true
 rec601=false
 
 [Shortcut Schemes]
-Current Scheme=Default
+Current Scheme=Premier
 
 [TitlePatterns]
 patterns=
@@ -135,7 +135,6 @@ videotodefaultfolder=1
 checkfirstprojectclip=false
 cleanCacheMonths=1
 color_duration=00:00:01:00
-disable_effect_parameters=false
 fade_duration=00:00:01:00
 image_duration=00:00:01:00
 subtitle_duration=00:00:01:00
@@ -157,9 +156,9 @@ previewparams=hwaccel=vaapi hwaccel_device=renderD128 hwaccel_output_format=vaap
 proxy_profile=12
 proxyextension=mov
 proxyimageminsize=1280
-proxyminsize=480
+proxyminsize=720
 proxyparams=-hwaccel vaapi -hwaccel_output_format vaapi -i -vf scale_vaapi=w=%width:h=-2:format=nv12,hwupload -codec:v h264_vaapi -g 1 -bf 0 -qp 26 -acodec ac3 -ab 128k
-proxyscale=480
+proxyscale=720
 videotracks=3
 
 [sdl]
@@ -199,12 +198,15 @@ defaultrescaleheight=540
 defaultrescalewidth=960
 displayProjectMonitorInfo=37
 favorite_effects=volume,lift_gamma_gain,qtblend,lumaliftgaingamma,avfilter.exposure,frei0r.contrast0r,frei0r.balanc0r,frei0r.colgate,avfilter.selectivecolor,avfilter.colorbalance,frei0r.colorize,frei0r.saturat0r,avfilter.lut3d,frei0r.bezier_curves,box_blur,avfilter.cas,avfilter.gblur,avfilter.dblur,avfilter.bilateral,avfilter.colorize,avfilter.colorlevels,frei0r.levels,mask_apply,mask_start-rotoscoping,mask_start-frei0r.select0r,opencv.tracker
-guidesCategories=Category 1:0:#9b59b6,Category 2:1:#3daee9,Category 3:2:#1abc9c,Category 4:3:#1cdc9a,Category 5:4:#c9ce3b,Category 6:5:#fdbc4b,Category 7:6:#f39c1f,Category 8:7:#f47750,Category 9:8:#da4453
+guidesCategories=A-Roll:8:#008080,B-Roll:10:#400080,Intro:11:#408000,Outtro:12:#800000,Object:13:#f4dd0b,Landscape:14:#0bf469,Transition:15:#0b22f4,Subject:16:#f40b96
 mixerCollapse=true
+overlayColor=136,0,0
 producerslist=abnormal,blank,color,colour,consumer,hold,loader,loader-nogl,melt,melt_file,noise,timewarp,tone,vorbis,decklink,qimage,qtext,kdenlivetitle,glaxnimate,blipflash,count,pgm,avformat,avformat-novalidate,xml,xml-string,xml-nogl,pango,pixbuf,frei0r.ising0r,frei0r.lissajous0r,frei0r.nois0r,frei0r.onecol0r,frei0r.partik0l,frei0r.plasma,frei0r.test_pat_B,frei0r.test_pat_C,frei0r.test_pat_G,frei0r.test_pat_I,frei0r.test_pat_L,frei0r.test_pat_R,framebuffer,ladspa.1416,ladspa.1885,ladspa.1881,ladspa.1047,ladspa.1050
 properties_panel_page=1
 renderProfile=VAAPI AMD H264
 showtitlebars=false
+thumbColor1=0,128,128
+thumbColor2=0,179,179
 validated_luts=/app/share/kdenlive/luts/BLUE_TINT.cube,/app/share/kdenlive/luts/CINEMATIC.cube,/app/share/kdenlive/luts/TEAL_ORANGE.cube,/app/share/kdenlive/luts/GREEN_TINT.cube,/home/nodxine/Videos/LUTs/CINEMA_3.cube,/home/nodxine/Videos/LUTs/cinematic green.cube,/home/nodxine/Videos/LUTs/colour_pop.cube,/home/nodxine/Videos/LUTs/LateAfternoonWanderlust.cube
 widgetstyle=Default
 
