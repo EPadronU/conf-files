@@ -32,6 +32,7 @@ if status --is-interactive
     abbr --add --global gam 'git commit --amend --no-edit --date=now'
     abbr --add --global glg 'git log --graph --all'
     abbr --add --global gln 'git log --name-only'
+    abbr --add --global grs 'git restore --staged'
     abbr --add --global gpf 'git push --force'
     abbr --add --global nvi 'nvm install lts'
 end
