@@ -2,15 +2,26 @@
 update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
 
 [1]
-Description=Better window placement
+Description=Restore titlebar and frame for Kdenlive's Edit Marker windows
 ignoregeometry=true
-ignoregeometryrule=2
 minsize=0,0
-minsizerule=2
-placementrule=2
+noborderrule=2
+title=Edit Marker — Kdenlive
+titlematch=1
 types=1
-wmclass=^(?!krunner)
-wmclassmatch=3
+wmclass=\sorg.kde.kdenlive
+wmclasscomplete=true
+wmclassmatch=1
+
+[19920145-7f74-4958-855b-a038afc1ef7e]
+Description=Restore titlebar and frame for Kdenlive's Edit Marker windows
+noborderrule=2
+title=Edit Marker — Kdenlive
+titlematch=1
+types=1
+wmclass=\sorg.kde.kdenlive
+wmclasscomplete=true
+wmclassmatch=1
 
 [2]
 Description=Better window placement
@@ -34,8 +45,8 @@ wmclass=^(?!krunner)
 wmclassmatch=3
 
 [General]
-count=1
-rules=1
+count=2
+rules=1,2
 
 [f25be71b-af18-4f02-87f9-9f771e315067]
 Description=Application settings for gimp
