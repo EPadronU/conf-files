@@ -6,6 +6,12 @@ return {
 
   build = ":TSUpdate",
 
+  init = function ()
+    -- [Module] Integrate `nvim-ts-context-commentstring`
+    -- Skip backwards compatibility routines and speed up loading
+    vim.g.skip_ts_context_commentstring_module = true
+  end,
+
   config = function()
     require("nvim-treesitter.configs").setup {
       -- A list of parser names, or `all`
@@ -79,34 +85,7 @@ return {
       -- [Module] Integrete `nvim-autopairs`
       autopairs = {
         enable = true,
-      },
-
-      -- [Module] Integrate `nvim-ts-context-commentstring`
-      context_commentstring = {
-        enable = true,
-
-        -- `commentstring` calculation only when it is actually needed
-        -- Require for Comment.nvim integration
-        enable_autocmd = false,
-
-        -- Support for more languages
-        -- config = {
-        -- Simplest configuration
-        -- css = '// %s',
-
-        -- For commenting plugins
-        -- typescript = { __default = '// %s', __multiline = '/* %s */' },
-
-        -- Making use of treesitter nodes
-        -- javascript = {
-        -- __default = '// %s',
-        -- jsx_element = '{/* %s */}',
-        -- jsx_fragment = '{/* %s */}',
-        -- jsx_attribute = '// %s',
-        -- comment = '// %s'
-        -- },
-        -- },
-      },
+      }
     }
   end,
 }
