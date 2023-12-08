@@ -1,6 +1,8 @@
+[FileDialogSize]
+2 screens: Height=1020
+2 screens: Width=884
+
 [KFileDialog Settings]
-Recent Files[$e]=shortcuts.kksrc,file:$HOME/Plasma/shortcuts.kksrc,file:$HOME/Downloads/IMG_20230505_003013_555.jpg,file:$HOME/Applications/Nextcloud-x86_64.AppImage,file:$HOME/Pictures/wallpapers/mountains.jpeg
-Recent URLs[$e]=file:$HOME/Plasma/,file:$HOME/Pictures/wallpapers/,file:$HOME/Applications/,file:$HOME/Downloads/,file:$HOME/
 detailViewIconSize=16
 iconViewIconSize=64
 

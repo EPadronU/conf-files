@@ -1,4 +1,4 @@
-# git config filter.ark-ignore.clean "grep -Ev '^(2 screens|Recent Files|Recent URLs|splitterSizes|State)'"
+# git config filter.ark-ignore.clean "grep -Ev '^(.+screens?|Recent Files|Recent URLs|splitterSizes|State)'"
 # git config filter.ark-ignore.smudge cat
 arkrc filter=ark-ignore
 
@@ -6,11 +6,11 @@ arkrc filter=ark-ignore
 # git config filter.btop-ignore.smudge cat
 btop.conf filter=btop-ignore
 
-# git config filter.dolphin-ignore.clean "grep -Ev '^(2 screens)'"
+# git config filter.dolphin-ignore.clean "grep -Ev '^(.+screens?)'"
 # git config filter.dolphin-ignore.smudge cat
 dolphinrc filter=dolphin-ignore
 
-# git config filter.gwenview-ignore.clean "grep -Ev '^(2 screens|MenuBar|State|\w+SplitterSize|Recent Files|Recent URLs)'"
+# git config filter.gwenview-ignore.clean "grep -Ev '^(.+screens?|MenuBar|State|\w+SplitterSize|Recent Files|Recent URLs)'"
 # git config filter.gwenview-ignore.smudge cat
 gwenviewrc filter=gwenview-ignore
 
@@ -18,7 +18,7 @@ gwenviewrc filter=gwenview-ignore
 # git config filter.haruna-ignore.smudge cat
 haruna.conf filter=haruna-ignore
 
-# git config filter.kate-ignore.clean "grep -Ev '^(2 screens)'"
+# git config filter.kate-ignore.clean "grep -Ev '^(.+screens?)'"
 # git config filter.kate-ignore.smudge cat
 katerc filter=kate-ignore
 
@@ -26,18 +26,26 @@ katerc filter=kate-ignore
 # git config filter.keepass-ignore.smudge cat
 keepassxc.ini filter=keepass-ignore
 
-# git config filter.kdenlive-ignore.clean "grep -Ev '^(State|File|Name|2 screens|Recent URLs|Recent Files|treeviewheaders|lastCacheCheck|Kdenlive.+Folder|project_fps)'"
+# git config filter.kdenlive-ignore.clean "grep -Ev '^(State|File|Name|.+screens?|Recent URLs|Recent Files|treeviewheaders|lastCacheCheck|Kdenlive.+Folder|project_fps)'"
 # git config filter.kdenlive-ignore.smudge cat
 kdenlive\-flatpakrc filter=kdenlive-ignore
 
-# git config filter.konsole-ignore.clean "grep -Ev '^(FileDialogSize|Recent |eDP|State|RestorePositionForNextInstance|2 screens)|screen'"
+# git config filter.konsole-ignore.clean "grep -Ev '^(FileDialogSize|Recent |eDP|State|RestorePositionForNextInstance|.+screens?)|screen'"
 # git config filter.konsole-ignore.smudge cat
 konsolerc filter=konsole-ignore
 
-# git config filter.okular-ignore.clean "grep -Ev '^(State|File|Name|2 screens|eDP|Recent URLs|Recent Files)'"
+# git config filter.kwrite-ignore.clean "grep -Ev '^(Search History|.+screens?)'"
+# git config filter.kwrite-ignore.smudge cat
+kwriterc filter=kwrite-ignore
+
+# git config filter.okular-ignore.clean "grep -Ev '^(State|File|Name|.+screens?|eDP|Recent URLs|Recent Files)'"
 # git config filter.okular-ignore.smudge cat
 okularrc filter=okular-ignore
 
 # git config filter.obs-ignore.clean "grep -Ev '^(DockState|geometry)'"
 # git config filter.obs-ignore.smudge cat
 global.ini filter=obs-ignore
+
+# git config filter.systemsettings-ignore.clean "grep -Ev '^(Recent Files|Recent URLs)'"
+# git config filter.systemsettings-ignore.smudge cat
+systemsettingsrc filter=systemsettings-ignore

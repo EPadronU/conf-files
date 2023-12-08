@@ -4,6 +4,7 @@ MenuBar=Disabled
 Autoplay=false
 
 [KFileDialog Settings]
+detailViewIconSize=16
 iconViewIconSize=64
 
 [MainWindow]
@@ -23,8 +24,8 @@ View Style=Tree
 mediaDoubleClickImport=false
 
 [OnlineResources]
-provider=Freesound
-zoom=7
+provider=Pexels Video
+zoom=6
 
 [Recent Dirs]
 
@@ -78,20 +79,20 @@ scale_factor=6
 [TitleWidget]
 background_alpha=0
 background_color=0,0,0
-dialog_geometry=AdnQywADAAAAAAeAAAAAAAAADvoAAAP1AAAHgAAAABQAAAvHAAAC6QAAAAACAAAAB4AAAAeAAAAAAAAADvoAAAP1
-font_color=255,255,255
-font_family=Kaushan Script,-1,120,5,50,0,0,0,0,0
+dialog_geometry=AdnQywADAAAAAAQ4AAABpAAAC7IAAAW2AAAEOAAAAbgAAAh/AAAEjQAAAAACAAAAB4AAAAQ4AAABpAAAC7IAAAW2
+font_color=112,182,105
+font_family=Chakra Petch SemiBold,-1,180,5,50,0,0,0,0,0
 font_italic=false
 font_outline=10
-font_outline_color=0,0,0
-font_pixel_size=120
+font_outline_color=112,182,105
+font_pixel_size=180
 font_underlined=false
 font_weight=50
-rect_background_alpha=255
-rect_background_color=0,0,0
+rect_background_alpha=0
+rect_background_color=255,255,255,0
 rect_foreground_alpha=255
-rect_foreground_color=0,0,0
-rect_line_width=0
+rect_foreground_color=14,14,182
+rect_line_width=8
 use_grid=false
 
 [UiSettings]
@@ -101,6 +102,7 @@ ColorSchemePath=
 bezier_showallhandles=false
 
 [bin]
+bin_zoom=1
 hoverPreview=true
 
 [capture]
@@ -122,6 +124,7 @@ encodethreads=12
 ffmpegpath[$e]=/app/bin/ffmpeg
 ffplaypath[$e]=/app/bin/ffplay
 ffprobepath[$e]=/app/bin/ffprobe
+glaxnimatePath=/home/nodxine/.local/bin/glaxnimate.sh
 kdenliverendererpath[$e]=/app/bin/kdenlive_render
 mediainfopath[$e]=/app/bin/mediainfo
 meltpath[$e]=/app/bin/melt
@@ -155,15 +158,14 @@ previewextension=mp4
 previewparams=hwaccel=vaapi hwaccel_device=renderD128 hwaccel_output_format=vaapi vcodec=hevc_vaapi vb=30000k
 proxy_profile=12
 proxyextension=mov
-proxyimageminsize=1280
-proxyminsize=720
+proxyimageminsize=1920
+proxyminsize=1920
 proxyparams=-hwaccel vaapi -hwaccel_output_format vaapi -i -vf scale_vaapi=w=%width:h=-2:format=nv12,hwupload -codec:v h264_vaapi -g 1 -bf 0 -qp 26 -acodec ac3 -ab 128k
-proxyscale=720
+proxyscale=1920
 videotracks=3
 
 [sdl]
 blackmagic_output_device=-1
-fullscreen_monitor=1:
 preferredcomposite=qtblend
 window_background=0,54,54
 
@@ -174,10 +176,12 @@ dialogSize=720,480
 shuttlebuttons=button0=monitor_pause
 
 [speech]
+vosk_text_model=vosk-model-en-us-0.42-gigaspeech
 whisperDevice=
 
 [timeline]
 autotrackheight=true
+defaultkeyframeinterp=0
 headerwidth=170
 proxypreview=false
 raisepropsclips=false
@@ -187,24 +191,28 @@ seekonaddeffect=true
 trackheight=54
 
 [titles]
+selected_template=simple-scroll.kdenlivetitle
 titlerAlign=1
+titlerShowbg=true
 titlerVersion=300
 
 [unmanaged]
 alwaysShowMonitorAudio=true
+colorclipcolor=255,255,255
 consumerslist=multi,null,xgl,decklink,cbrts,qglsl,rtaudio,blipflash,avformat,xml,sdl2,sdl2_audio,jack
 default_marker_type=8
 default_profile=vertical_hd_30
 defaultrescaleheight=540
 defaultrescalewidth=960
 displayProjectMonitorInfo=37
-favorite_effects=volume,lift_gamma_gain,qtblend,lumaliftgaingamma,avfilter.exposure,frei0r.contrast0r,frei0r.balanc0r,frei0r.colgate,avfilter.selectivecolor,avfilter.colorbalance,frei0r.colorize,frei0r.saturat0r,avfilter.lut3d,frei0r.bezier_curves,box_blur,avfilter.cas,avfilter.gblur,avfilter.dblur,avfilter.bilateral,avfilter.colorize,avfilter.colorlevels,frei0r.levels,mask_apply,mask_start-rotoscoping,mask_start-frei0r.select0r,opencv.tracker
+favorite_effects=volume,lift_gamma_gain,qtblend,lumaliftgaingamma,avfilter.exposure,frei0r.contrast0r,frei0r.balanc0r,frei0r.colgate,avfilter.selectivecolor,avfilter.colorbalance,frei0r.colorize,frei0r.saturat0r,avfilter.lut3d,frei0r.bezier_curves,box_blur,avfilter.cas,avfilter.gblur,avfilter.dblur,avfilter.bilateral,avfilter.colorize,avfilter.colorlevels,frei0r.levels,mask_apply,mask_start-rotoscoping,mask_start-frei0r.select0r,opencv.tracker,avfilter.noise,audioseam
+force_breeze=true
 guidesCategories=A-Roll:8:#008080,B-Roll:10:#400080,Intro:11:#408000,Outtro:12:#800000,Object:13:#f4dd0b,Landscape:14:#0bf469,Transition:15:#0b22f4,Subject:16:#f40b96
 mixerCollapse=true
 overlayColor=136,0,0
 producerslist=abnormal,blank,color,colour,consumer,hold,loader,loader-nogl,melt,melt_file,noise,timewarp,tone,vorbis,decklink,qimage,qtext,kdenlivetitle,glaxnimate,blipflash,count,pgm,avformat,avformat-novalidate,xml,xml-string,xml-nogl,pango,pixbuf,frei0r.ising0r,frei0r.lissajous0r,frei0r.nois0r,frei0r.onecol0r,frei0r.partik0l,frei0r.plasma,frei0r.test_pat_B,frei0r.test_pat_C,frei0r.test_pat_G,frei0r.test_pat_I,frei0r.test_pat_L,frei0r.test_pat_R,framebuffer,ladspa.1416,ladspa.1885,ladspa.1881,ladspa.1047,ladspa.1050
-properties_panel_page=1
-renderProfile=VAAPI AMD H264
+renderProfile=VAAPI AMD H265
+showeffectinfo=true
 showtitlebars=false
 thumbColor1=0,128,128
 thumbColor2=0,179,179
