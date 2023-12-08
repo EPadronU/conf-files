@@ -11,11 +11,6 @@ ShowSidebar=false
 iconViewIconSize=64
 
 [MainWindow]
-1920x1080 screen: Height=708
-1920x1080 screen: Width=1152
-1920x1080 screen: Window-Maximized=true
-1920x1080 screen: XPosition=384
-1920x1080 screen: YPosition=217
 HDMI-A-1-0 eDP=eDP
 MenuBar=Disabled
 ToolBarsMovable=Disabled

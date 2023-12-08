@@ -149,9 +149,5 @@ Word Completion Remove Tail=true
 
 [KTextEditor::Search]
 Replace History=\s,1080,1920,junto -video2,GOPRO/junto -video2
-Search History=\s ,":,cataly,tmh,tm,emo,VID_20230504_171042,1024,572,tiktok,576,576\\\\b,1080,tikto,720,Telf/VID_20230504_171042
 
 [MainWindow]
-2 screens: Height=656
-2 screens: Width=1152
-2 screens: Window-Maximized=true
