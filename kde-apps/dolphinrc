@@ -4,6 +4,9 @@ update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 [ContextMenu]
 ShowCopyMoveMenu=true
 
+[CreateDialog]
+LastMimeType=application/x-compressed-tar
+
 [DetailsMode]
 HighlightEntireRow=false
 SidePadding=0
