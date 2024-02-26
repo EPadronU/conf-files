@@ -80,18 +80,18 @@ scale_factor=6
 background_alpha=0
 background_color=0,0,0
 dialog_geometry=AdnQywADAAAAAAQ4AAABpAAAC7IAAAW2AAAEOAAAAbgAAAh/AAAEjQAAAAACAAAAB4AAAAQ4AAABpAAAC7IAAAW2
-font_color=112,182,105
-font_family=Chakra Petch SemiBold,-1,180,5,50,0,0,0,0,0
+font_color=255,255,255
+font_family=Arial Black,-1,30,5,75,0,0,0,0,0
 font_italic=false
 font_outline=10
-font_outline_color=112,182,105
-font_pixel_size=180
+font_outline_color=0,0,0
+font_pixel_size=30
 font_underlined=false
-font_weight=50
+font_weight=75
 rect_background_alpha=0
 rect_background_color=255,255,255,0
 rect_foreground_alpha=255
-rect_foreground_color=14,14,182
+rect_foreground_color=182,1,1
 rect_line_width=8
 use_grid=false
 
@@ -99,6 +99,7 @@ use_grid=false
 ColorSchemePath=
 
 [bezier_spline]
+bezier_gridlines=2
 bezier_showallhandles=false
 
 [bin]
@@ -137,12 +138,12 @@ videotodefaultfolder=1
 [misc]
 checkfirstprojectclip=false
 cleanCacheMonths=1
-color_duration=00:00:01:00
+color_duration=00:00:03:00
 fade_duration=00:00:01:00
-image_duration=00:00:01:00
-subtitle_duration=00:00:01:00
+image_duration=00:00:03:00
+subtitle_duration=00:00:03:00
 tabposition=0
-title_duration=00:00:01:00
+title_duration=00:00:03:00
 transition_duration=00:00:01:00
 
 [project]
@@ -153,24 +154,23 @@ externalProxyProfile=./;GL;.LRV;./;GX;.MP4;./;GP;.LRV;./;GP;.MP4;./;GOPR;.LRV;./
 external_proxy_profile=2
 generateimageproxy=true
 generateproxy=true
-parallelrender=true
 previewextension=mp4
 previewparams=hwaccel=vaapi hwaccel_device=renderD128 hwaccel_output_format=vaapi vcodec=hevc_vaapi vb=30000k
-proxy_profile=12
+proxy_profile=11
 proxyextension=mov
 proxyimageminsize=1920
 proxyminsize=1920
-proxyparams=-hwaccel vaapi -hwaccel_output_format vaapi -i -vf scale_vaapi=w=%width:h=-2:format=nv12,hwupload -codec:v h264_vaapi -g 1 -bf 0 -qp 26 -acodec ac3 -ab 128k
+proxyparams=-init_hw_device vaapi=vaapi0: -filter_hw_device vaapi0 -i -vf scale=%width:-2,format=nv12,hwupload -codec:v h264_vaapi -g 1 -bf 0 -qp 26 -acodec ac3 -ab 128k
 proxyscale=1920
 videotracks=3
 
 [sdl]
 blackmagic_output_device=-1
-preferredcomposite=qtblend
+preferredcomposite=frei0r.cairoblend
 window_background=0,54,54
 
 [settings]
-dialogSize=720,480
+dialogSize=1915,1043
 
 [shuttle]
 shuttlebuttons=button0=monitor_pause
@@ -181,8 +181,9 @@ whisperDevice=
 
 [timeline]
 autotrackheight=true
-defaultkeyframeinterp=0
+displayallchannels=true
 headerwidth=170
+multistream_checktrack=false
 proxypreview=false
 raisepropsclips=false
 raisepropstracks=false
@@ -192,32 +193,32 @@ trackheight=54
 
 [titles]
 selected_template=simple-scroll.kdenlivetitle
-titlerAlign=1
+titlerAlign=2
 titlerShowbg=true
 titlerVersion=300
 
 [unmanaged]
 alwaysShowMonitorAudio=true
-colorclipcolor=255,255,255
 consumerslist=multi,null,xgl,decklink,cbrts,qglsl,rtaudio,blipflash,avformat,xml,sdl2,sdl2_audio,jack
 default_marker_type=8
-default_profile=vertical_hd_30
+default_profile=atsc_1080p_50
 defaultrescaleheight=540
 defaultrescalewidth=960
 displayProjectMonitorInfo=37
-favorite_effects=volume,lift_gamma_gain,qtblend,lumaliftgaingamma,avfilter.exposure,frei0r.contrast0r,frei0r.balanc0r,frei0r.colgate,avfilter.selectivecolor,avfilter.colorbalance,frei0r.colorize,frei0r.saturat0r,avfilter.lut3d,frei0r.bezier_curves,box_blur,avfilter.cas,avfilter.gblur,avfilter.dblur,avfilter.bilateral,avfilter.colorize,avfilter.colorlevels,frei0r.levels,mask_apply,mask_start-rotoscoping,mask_start-frei0r.select0r,opencv.tracker,avfilter.noise,audioseam
+favorite_effects=volume,lift_gamma_gain,qtblend,lumaliftgaingamma,avfilter.exposure,frei0r.contrast0r,frei0r.balanc0r,frei0r.colgate,avfilter.selectivecolor,avfilter.colorbalance,frei0r.colorize,frei0r.saturat0r,avfilter.lut3d,frei0r.bezier_curves,avfilter.cas,avfilter.gblur,avfilter.dblur,avfilter.bilateral,avfilter.colorize,avfilter.colorlevels,frei0r.levels,mask_apply,mask_start-rotoscoping,mask_start-frei0r.select0r,opencv.tracker,avfilter.noise,audioseam,avfilter.sab,avfilter.smartblur,avfilter.unsharp,frei0r.alpha0ps,frei0r.alphaspot,mask_start-frei0r.alphaspot,frei0r.select0r,avfilter.despill,frei0r.keyspillm0pup,rotoscoping
 force_breeze=true
 guidesCategories=A-Roll:8:#008080,B-Roll:10:#400080,Intro:11:#408000,Outtro:12:#800000,Object:13:#f4dd0b,Landscape:14:#0bf469,Transition:15:#0b22f4,Subject:16:#f40b96
 mixerCollapse=true
 overlayColor=136,0,0
+previewScaling=0
 producerslist=abnormal,blank,color,colour,consumer,hold,loader,loader-nogl,melt,melt_file,noise,timewarp,tone,vorbis,decklink,qimage,qtext,kdenlivetitle,glaxnimate,blipflash,count,pgm,avformat,avformat-novalidate,xml,xml-string,xml-nogl,pango,pixbuf,frei0r.ising0r,frei0r.lissajous0r,frei0r.nois0r,frei0r.onecol0r,frei0r.partik0l,frei0r.plasma,frei0r.test_pat_B,frei0r.test_pat_C,frei0r.test_pat_G,frei0r.test_pat_I,frei0r.test_pat_L,frei0r.test_pat_R,framebuffer,ladspa.1416,ladspa.1885,ladspa.1881,ladspa.1047,ladspa.1050
+properties_panel_page=1
 renderProfile=VAAPI AMD H265
 showeffectinfo=true
-showtitlebars=false
 thumbColor1=0,128,128
 thumbColor2=0,179,179
 validated_luts=/app/share/kdenlive/luts/BLUE_TINT.cube,/app/share/kdenlive/luts/CINEMATIC.cube,/app/share/kdenlive/luts/TEAL_ORANGE.cube,/app/share/kdenlive/luts/GREEN_TINT.cube,/home/nodxine/Videos/LUTs/CINEMA_3.cube,/home/nodxine/Videos/LUTs/cinematic green.cube,/home/nodxine/Videos/LUTs/colour_pop.cube,/home/nodxine/Videos/LUTs/LateAfternoonWanderlust.cube
 widgetstyle=Default
 
 [version]
-version=23.08.3
+version=23.08.4
