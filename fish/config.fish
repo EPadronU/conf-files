@@ -74,5 +74,8 @@ if status --is-login
     set -gx MOZ_X11_EGL 1
     set -gx fish_browser $BROWSER
     set -gx fish_help_browser $BROWSER
-    set -gx LESS --quit-if-one-screen --hilite-search --ignore-case --status-column --LONG-PROMPT --LINE-NUMBERS --RAW-CONTROL-CHARS --chop-long-lines --incsearch --no-histdups --save-marks --use-color
+    set -gx LESS --quit-if-one-screen --hilite-search --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --incsearch --no-histdups --save-marks --use-color
+
+    # Rust
+    replay source "/home/nodxine/.local/share/cargo/env"
 end
