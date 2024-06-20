@@ -1,3 +1,25 @@
+local sentinel_polling_rate = 60000 -- one minute in millis
+
+local set_colorschema = function()
+  local hour = os.date("*t").hour
+
+  local colorscheme = "dawnfox"
+
+  if hour < 6 or hour >= 18 then
+    colorscheme = "nordfox"
+  end
+
+  vim.cmd("colorscheme " .. colorscheme)
+end
+
+local start_colorschema_sentinel = function()
+  set_colorschema()
+
+  local timer = vim.loop.new_timer()
+
+  timer:start(sentinel_polling_rate, sentinel_polling_rate, vim.schedule_wrap(set_colorschema))
+end
+
 return {
   "EdenEast/nightfox.nvim",
 
@@ -43,7 +65,7 @@ return {
         -- List of various plugins and additional options
         modules = {
           cmp = true,
-          --gitsign = true,
+          gitsign = true,
           mini = true,
           nvimtree = true,
           telescope = true,
@@ -58,6 +80,6 @@ return {
       groups = {},
     }
 
-    vim.cmd("colorscheme dawnfox")
+    start_colorschema_sentinel()
   end
 }

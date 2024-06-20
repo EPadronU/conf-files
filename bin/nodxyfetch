@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+######################################################################
+# My very own screenfetch script
+######################################################################
+
 # Colors and styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 RESET='\u001b[0m'
 BOLD='\u001b[1m'
@@ -54,12 +58,11 @@ swap_used=$(awk '{print $3}' <<< "${swap_usage}")
 
 # Output ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo -e "    ${BOLD}${RED}uptime${RESET} ${BLACK}‧${RESET} ${BOLD}$(uptime -p | cut -f 2- -d ' ')${RESET}"
-#echo -e "    ${BLUE}kernel${RESET} ${BLACK}‧${RESET} $(uname -p) $(uname -sr)"
 echo -e "    ${BLUE}kernel${RESET} ${BLACK}‧${RESET} $(lscpu | grep 'Model name:' | awk '{$1=$2=""; gsub(/^[ \\t]+/, "", $0); print $0}') $(uname -sr)"
 echo -e "     ${BOLD}shell${BLUE} ${BLACK}‧${RESET} $(basename $SHELL)"
 echo -e "    ${RED}distro${BLACK} ${BLACK}‧${RESET} $(lsb_release -is) $(lsb_release -rs) $(lsb_release -cs)"
 echo -e "   ${GREEN}desktop${BLACK} ${BLACK}‧${RESET} $XDG_CURRENT_DESKTOP"
-echo -e "  ${BOLD}${ORANGE}packages${RESET} ${BLACK}‧${RESET} $(dnf list installed | wc -l)"
+echo -e "  ${BOLD}${ORANGE}packages${RESET} ${BLACK}‧${RESET} $(apt list 2>/dev/null | wc -l)"
 echo -e "${CYAN}resolution${RESET} ${BLACK}‧${RESET} $(xdpyinfo | awk '/^ +dimensions/ {print $2}')"
 echo -e "      ${MAGENTA}disk${RESET} ${BLACK}‧${RESET} $disk_used out of $disk_total (${BOLD}$disk_per${RESET})"
 echo -e "    ${ORANGE}memory${RESET} ${BLACK}‧${RESET} $memory_used out of $memory_total"

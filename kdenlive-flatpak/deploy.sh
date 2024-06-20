@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Get the current location of the configuration files
-configuration_files_absolute_path=$(dirname $(readlink -f $0))
+# Get the current location of the deployment file
+configuration_files_absolute_path=$(dirname $(realpath -e $0))
 
 # Particular target directory for these configuration files
 target_directory=$HOME/.var/app/org.kde.kdenlive/config

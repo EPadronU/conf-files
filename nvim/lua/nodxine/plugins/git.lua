@@ -8,11 +8,11 @@ return {
     opts = {
       -- Configure the text and highlight groups to use
       signs = {
-        add          = { hl = "GitSignsAdd", text = "┃", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-        change       = { hl = "GitSignsChange", text = "┃", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-        delete       = { hl = "GitSignsDelete", text = "▶", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-        topdelete    = { hl = "GitSignsDelete", text = "‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-        changedelete = { hl = "GitSignsChange", text = "~", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+        add          = { text = "┃" },
+        change       = { text = "┃" },
+        delete       = { text = "▶" },
+        topdelete    = { text = "‾" },
+        changedelete = { text = "~" },
       },
 
       -- Toggle with `:Gitsigns toggle_signs`
@@ -109,11 +109,6 @@ return {
 
       -- When using `setqflist` or `setloclist`, open Trouble instead of the quickfix/location list
       trouble = false,
-
-      -- yadm configuration
-      yadm = {
-        enable = false
-      },
 
       -- Keymaps
       on_attach = function(bufnr)

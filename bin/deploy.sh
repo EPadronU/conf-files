@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Get the current location of the files
-files_absolute_path=$(dirname $(readlink -f $0))
+# Get the current location of the deployment file
+files_absolute_path=$(dirname $(realpath -e $0))
 
 # Particular target directory for these files
 target_directory=$HOME/.local/bin

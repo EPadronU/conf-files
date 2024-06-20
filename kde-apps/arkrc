@@ -1,6 +1,9 @@
 [CreateDialog]
 LastMimeType=application/x-7z-compressed
 
+[ExtractDialog]
+DirHistory[$e]=$HOME/Downloads/
+
 [FileDialogSize]
 
 [General]

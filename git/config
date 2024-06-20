@@ -2,19 +2,32 @@
 	name = Edinson E. Padrón Urdaneta
 	email = edinson.padron+git@posteo.net
 	signingkey = E8CF0F02FCBE960E
-[color]
-	ui = auto
-[commit]
-	gpgsign = true
 [core]
 	editor = nvim
-	pager = bat
+	pager = less --LINE-NUMBERS
+[blame]
+        coloring = repeatedLines
+        showEmail = true
+[branch]
+        autoSetupRebase = always
+[checkout]
+        workers = -1
+[color]
+	ui = auto
+[color "blame"]
+	repeatedLines = grey
+[commit]
+	gpgsign = true
 [diff]
 	algorithm = histogram
 	mnemonicPrefix = true
+        relative = true
 	renames = copy
-	tool = bat
 	indentHeuristic = true
+        colorMoved = default
+	tool = less
+[grep]
+        patternType = perl
 [gpg]
 	program = gpg
 [init]
@@ -23,7 +36,7 @@
 	abbrevCommit = true
 	follow = true
 [merge]
-	conflictStyle = diff3
+	conflictStyle = zdiff3
 	ff = false
 [pull]
 	rebase = true

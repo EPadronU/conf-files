@@ -122,14 +122,19 @@ return {
       require("mason-lspconfig").setup {
         -- A list of servers to automatically install if they're not already installed
         ensure_installed = {
+          "bashls",
           "clangd",
-          "emmet_ls",
+          "cssls",
+          "emmet_language_server",
           -- "grammarly",
-          -- "html",
+          "html",
           "jdtls",
-          -- "jsonls",
+          "jsonls",
           "lua_ls",
-          -- "tsserver",
+          "marksman", -- Markdown
+          "prismals", -- TS ORM
+          "tailwindcss",
+          "tsserver",
           "yamlls",
         },
 

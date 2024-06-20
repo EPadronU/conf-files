@@ -3,6 +3,8 @@ FullScreen=false
 shouldShowMenuBarComingFromFullScreen=false
 shouldShowToolBarComingFromFullScreen=true
 
+[FileDialogSize]
+
 [General]
 LockSidebar=true
 ShowSidebar=false

@@ -1,4 +1,4 @@
-# Personal Cheat Sheet for NeoVim (plugins included)
+# Personal Cheat Sheet for NeoVim <br/> <small>(plugins included)</small>
 
 ---
 

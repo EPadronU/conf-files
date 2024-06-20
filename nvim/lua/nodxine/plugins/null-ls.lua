@@ -18,7 +18,7 @@ return {
 
         -- A fast, open-source, static analysis tool for finding bugs and enforcing code standards
         -- https://semgrep.dev
-        null_ls.builtins.diagnostics.semgrep.with {
+        --[[ null_ls.builtins.diagnostics.semgrep.with {
           extra_args = function(params)
             if params.ft == "java" then
               return {
@@ -37,7 +37,7 @@ return {
 
           -- With a lot of rules it takes its time
           timeout = 10000, -- (ms)
-        },
+        }, ]]
       }
     }
   end

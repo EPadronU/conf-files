@@ -1,10 +1,16 @@
+:root {
+  --main-color: #008080;
+  --main-complement-color: #FF7F7F;
+}
+
 @media print {
+
   *,
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
+    color: #000 !important;
     text-shadow: none !important;
   }
 
@@ -17,18 +23,18 @@
     content: " (" attr(href) ")";
   }
 
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
   pre,
   blockquote {
-    border: 1px solid #008080;
+    border: 1px solid #999;
     page-break-inside: avoid;
   }
 
@@ -59,13 +65,26 @@
 }
 
 html {
-  font-size: 16px;
-  font-family: 'Noto Sans';
+  font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
 }
 
 p,
-.air-p {
+.air-p,
+li {
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 h1,
@@ -80,10 +99,11 @@ h5,
 .air-h5,
 h6,
 .air-h6 {
+  color: #006680;
   font-weight: bold;
   margin: 1.8rem auto 0.2rem auto;
   padding-bottom: 0.2rem;
-  color: #006680;
+  word-spacing: 0.1em;
 }
 
 h1 a,
@@ -118,25 +138,26 @@ h1,
 .air-h1 {
   font-size: 3rem;
   margin: 0 auto 2rem auto;
+  text-align: center;
 }
 
 h2,
 .air-h2 {
-  border: solid #AAA;
+  border: solid var(--main-complement-color);
   border-width: 0 0 2px 0;
   font-size: 2.6rem;
 }
 
 h3,
 .air-h3 {
-  border: dotted #AAA;
+  border: dashed var(--main-complement-color);
   border-width: 0 0 2px 0;
   font-size: 2.2rem;
 }
 
 h4,
 .air-h4 {
-  border: dotted #AAA;
+  border: dotted var(--main-complement-color);
   border-width: 0 0 2px 0;
   font-size: 1.8rem;
 }
@@ -148,7 +169,6 @@ h5,
 
 h6,
 .air-h6 {
-  font-weight: bold;
   font-size: 1rem;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -172,7 +192,9 @@ textarea {
 }
 
 body {
+  background-color: white;
   color: #222;
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
   margin: 2rem auto 1rem auto;
 }
 
@@ -180,18 +202,19 @@ body {
   max-width: 1080px !important;
 }
 
-figure, figure caption {
+figure,
+figure caption {
   color: #777;
   text-align: center;
 }
 
 img {
-  border-left: 4px #FF7F7F solid;
-  border-top: 4px #FF7F7F solid;
-  border-right: 4px #008080 solid;
-  border-bottom: 4px #008080 solid;
+  border-bottom: 4px var(--main-complement-color) solid;
+  border-left: 4px var(--main-color) solid;
+  border-right: 4px var(--main-complement-color) solid;
+  border-top: 4px var(--main-color) solid;
   margin: 0 auto;
-  width: 400px;
+  max-width: 90%;
 }
 
 a,
@@ -199,22 +222,22 @@ a:visited {
   color: #003380;
 }
 
-a:hover,
 a:focus,
+a:hover,
 a:active {
   color: #7F0080;
 }
 
 pre {
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   padding: 0 1rem 0 1rem;
   text-align: left;
 }
 
 blockquote {
-  margin: 0;
-  border-left: 5px solid #008080;
+  border-left: 5px solid var(--main-color);
   font-style: italic;
+  margin: 0;
   padding: 0.1em 1.33em;
   text-align: left;
 }
@@ -238,4 +261,8 @@ dt {
 p {
   color: #333;
   line-height: 1.4em;
+}
+
+hr {
+  color: var(--main-complement-color);
 }

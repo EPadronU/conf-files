@@ -1,3 +1,4 @@
---theme="Monokai Extended Light"
+--theme="Monokai Extended Light" # Light mode
+#--theme="Nord" # Dark mode
 --wrap=never
 --pager='less --quit-if-one-screen --hilite-search --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --incsearch --no-histdups --save-marks'

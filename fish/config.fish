@@ -44,7 +44,7 @@ if status --is-login
     set -gx XDG_CONFIG_HOME $HOME/.config
     set -gx XDG_DATA_HOME $HOME/.local/share
     set -gx XDG_STATE_HOME $HOME/.local/state
-    set -gx XDG_DATA_DIRS $XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/nodxine/.local/share/flatpak/exports/share
+    #set -gx XDG_DATA_DIRS $XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/nodxine/.local/share/flatpak/exports/share
 
     # Preferred utilities
     set -gx BROWSER (type -p firefox)
@@ -71,7 +71,6 @@ if status --is-login
     fish_add_path $GOPATH/bin
 
     # Program's tweaks
-    set -gx MOZ_X11_EGL 1
     set -gx fish_browser $BROWSER
     set -gx fish_help_browser $BROWSER
     set -gx LESS --quit-if-one-screen --hilite-search --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --incsearch --no-histdups --save-marks --use-color

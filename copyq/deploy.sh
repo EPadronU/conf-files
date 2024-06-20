@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
+# Get the current location of the deployment file
+configuration_files_absolute_path=$(dirname $(realpath -e $0))
 
-# Get the current location of the configuration files
-configuration_files_absolute_path=$(dirname $(readlink -f $0))
-
-# Try to respect the XDG standard for the target directory
+# Use the XDG standard directory if available
 if [ -n $XDG_CONFIG_HOME ]; then
   target_directory=$XDG_CONFIG_HOME
 else

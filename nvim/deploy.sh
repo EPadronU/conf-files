@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Get the current location of the configuration files
-configuration_files_absolute_path=$(dirname $(readlink -f $0))
+# Get the current location of the deployment file
+configuration_files_absolute_path=$(dirname $(realpath -e $0))
 
 # Try to respect the XDG standard for the target directory
 if [ -n $XDG_CONFIG_HOME ]; then
@@ -29,4 +29,4 @@ ln -vis $configuration_files_absolute_path/init.lua $configuration_target_direct
 ln -vis $configuration_files_absolute_path/lua $configuration_target_directory
 ln -vis $configuration_files_absolute_path/ftplugin $configuration_target_directory
 ln -vis $configuration_files_absolute_path/data/air.css $data_target_directory
-ln -vis $configuration_files_absolute_path/data/ros-pine.css $data_target_directory/syntax-highlight-theme.css
+ln -vis $configuration_files_absolute_path/data/rose-pine.css $data_target_directory/syntax-highlight-theme.css

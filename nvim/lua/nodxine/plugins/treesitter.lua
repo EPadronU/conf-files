@@ -6,12 +6,6 @@ return {
 
   build = ":TSUpdate",
 
-  init = function ()
-    -- [Module] Integrate `nvim-ts-context-commentstring`
-    -- Skip backwards compatibility routines and speed up loading
-    vim.g.skip_ts_context_commentstring_module = true
-  end,
-
   config = function()
     require("nvim-treesitter.configs").setup {
       -- A list of parser names, or `all`
@@ -19,23 +13,34 @@ return {
         "bash",
         "c",
         "css",
+        "csv",
         "dockerfile",
+        "doxygen",
         "fish",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
         "html",
         "java",
         "javascript",
         "json",
-        "json5",
-        "jsonc",
+        "kconfig",
         "kotlin",
         "lua",
         "make",
-        "php",
+        "markdown",
+        "prisma", -- TS ORM
+        "properties", -- Java properties file
         "python",
         "regex",
         "ruby",
-        "scheme",
+        "sql",
+        "tsx",
+        "typescript",
         "vim",
+        "yaml",
       },
 
       -- Install languages synchronously
@@ -44,7 +49,9 @@ return {
       -- [Module] Indentation based on treesitter for the `=` operator
       -- NOTE: This is an experimental feature.
       indent = {
-        enable = true
+        enable = true,
+
+        disable = { "markdown" }
       },
 
       -- [Module] Consistent syntax highlighting

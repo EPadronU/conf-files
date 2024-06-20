@@ -4,7 +4,7 @@ if not status_ok then
   return
 end
 
-lspconfig.emmet_language_server.setup {
+lspconfig.html.setup {
   on_attach = require("nodxine.plugins.lsp.handlers").on_attach,
 
   capabilities = require("nodxine.plugins.lsp.handlers").capabilities,

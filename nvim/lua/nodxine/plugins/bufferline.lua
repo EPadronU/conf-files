@@ -37,7 +37,7 @@ return {
       },
 
       -- The close buffer button icon
-      buffer_close_icon = "",
+      buffer_close_icon = "󰅖",
 
       -- The buffer modified indicator icon
       modified_icon = "●",
