@@ -164,7 +164,8 @@ Word Completion Minimal Word Length=2
 Word Completion Remove Tail=true
 
 [KTextEditor::Search]
-Search History=ivt, \s
+Replace History=
+Search History=
 
 [Konsole]
 AutoSyncronize=true

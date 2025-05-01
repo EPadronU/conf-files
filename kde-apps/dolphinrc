@@ -19,6 +19,9 @@ UseTabForSwitchingSplitView=true
 Version=202
 ViewPropsTimestamp=2023,7,14,14,26,3.277
 
+[IconsMode]
+PreviewSize=80
+
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
@@ -34,3 +37,6 @@ ConfirmDelete=true
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,webarchivethumbnail
+
+[kuick-copy]
+Paths[$e]=$HOME/

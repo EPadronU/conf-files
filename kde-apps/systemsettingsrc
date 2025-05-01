@@ -12,9 +12,8 @@ iconViewIconSize=64
 
 [MainWindow]
 1920x1080 screen: Window-Maximized=true
-2 screens: Height=953
-2 screens: Width=1841
-2 screens: Window-Maximized=true
+2 screens: Height=1010
+2 screens: Width=1907
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAAB3sAAAQTAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
