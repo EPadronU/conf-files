@@ -74,9 +74,6 @@ return {
       -- Any of `false`, `"nvim_lsp"` or `"coc"`
       diagnostics = "nvim_lsp",
 
-      -- Update the diagnostics information when in insert or replace modes
-      diagnostics_update_in_insert = true,
-
       -- Customise the appearance of the diagnostic count
       -- count is an integer representing total count of errors
       -- level is a string "error" | "warning"

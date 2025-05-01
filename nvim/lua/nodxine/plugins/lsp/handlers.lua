@@ -1,26 +1,19 @@
 local M = {}
 
 M.setup = function()
-  -- Text-based icons for the following diagnostic signs
-  local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn",  text = "" },
-    { name = "DiagnosticSignHint",  text = "" },
-    { name = "DiagnosticSignInfo",  text = "" },
-  }
-
-  -- Modify the attributes of the above signs
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, {
-      texthl = sign.name, text = sign.text,
-    })
-  end
-
   -- help vim.diagnostic.config()
   vim.diagnostic.config({
     underline = true,
     virtual_text = false,
-    signs = { active = signs },
+    signs = {
+      -- Text-based icons for the following diagnostic signs
+      text = {
+        [vim.diagnostic.severity.ERROR] = "",
+        [vim.diagnostic.severity.WARN] = "",
+        [vim.diagnostic.severity.HINT] = "",
+        [vim.diagnostic.severity.INFO] = "",
+      }
+    },
     float = {
       focusable = false,
       style = "minimal",

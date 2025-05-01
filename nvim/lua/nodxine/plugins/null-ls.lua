@@ -1,8 +1,8 @@
 return {
   -- Provide a way for non-LSP sources to hook into NeoVim's LSP features
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
 
-  dependencies = { "gitsigns.nvim" },
+  dependencies = { "gitsigns.nvim", "nvimtools/none-ls-extras.nvim" },
 
   config = function()
     local null_ls = require("null-ls")
@@ -15,6 +15,9 @@ return {
         -- Injects code actions for Git operations at the current cursor position (stage / preview /
         -- reset hunks, blame, etc.)
         null_ls.builtins.code_actions.gitsigns,
+
+        require("none-ls.diagnostics.eslint"),
+        require("none-ls.code_actions.eslint"),
 
         -- A fast, open-source, static analysis tool for finding bugs and enforcing code standards
         -- https://semgrep.dev

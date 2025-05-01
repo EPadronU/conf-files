@@ -116,6 +116,8 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
 
+    tag = "v1.32.0",
+
     dependencies = { "mason.nvim" },
 
     config = function()
@@ -134,7 +136,7 @@ return {
           "marksman", -- Markdown
           "prismals", -- TS ORM
           "tailwindcss",
-          "tsserver",
+          "ts_ls",
           "yamlls",
         },
 

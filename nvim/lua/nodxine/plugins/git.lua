@@ -24,10 +24,6 @@ return {
       -- Toggle with `:Gitsigns toggle_linehl`
       linehl = false,
 
-      -- Show the old version of hunks inline in the buffer (via virtual lines)
-      -- Toggle with `:Gitsigns toggle_deleted`
-      show_deleted = false,
-
       -- Toggle with `:Gitsigns toggle_word_diff`
       word_diff = false,
 

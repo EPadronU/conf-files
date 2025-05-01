@@ -6,7 +6,7 @@ end
 
 local path = require("jdtls.path")
 
-local ms_plugins_path = path.join {
+local ms_plugins_path = path.join(
   "~",
   ".m2",
   "repository",
@@ -14,10 +14,10 @@ local ms_plugins_path = path.join {
   "microsoft",
   "java",
   "**",
-  "*plug*.jar" }
+  "*plug*.jar")
 
 jdtls.start_or_attach {
-  cmd = { path.join { vim.fn.stdpath("data"), "mason", "bin", "jdtls" } },
+  cmd = { path.join(vim.fn.stdpath("data"), "mason", "bin", "jdtls") },
 
   root_dir = require('jdtls.setup').find_root({ ".git", "pom.xml", "mvnw", "gradlew" }),
 

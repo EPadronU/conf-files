@@ -5,7 +5,7 @@ local set_colorschema = function()
 
   local colorscheme = "dawnfox"
 
-  if hour < 6 or hour >= 18 then
+  if hour < 7 or hour >= 21 then
     colorscheme = "nordfox"
   end
 

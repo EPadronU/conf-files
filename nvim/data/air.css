@@ -70,7 +70,7 @@ html {
 
 @media screen and (min-width: 32rem) and (max-width: 48rem) {
   html {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
@@ -136,8 +136,8 @@ h6 a:visited,
 
 h1,
 .air-h1 {
-  font-size: 3rem;
-  margin: 0 auto 2rem auto;
+  font-size: 2rem;
+  margin: 0 auto 1rem auto;
   text-align: center;
 }
 
@@ -145,26 +145,26 @@ h2,
 .air-h2 {
   border: solid var(--main-complement-color);
   border-width: 0 0 2px 0;
-  font-size: 2.6rem;
+  font-size: 1.8rem;
 }
 
 h3,
 .air-h3 {
   border: dashed var(--main-complement-color);
   border-width: 0 0 2px 0;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
 }
 
 h4,
 .air-h4 {
   border: dotted var(--main-complement-color);
   border-width: 0 0 2px 0;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 h5,
 .air-h5 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 h6,
@@ -265,4 +265,8 @@ p {
 
 hr {
   color: var(--main-complement-color);
+}
+
+code {
+  background-color: oldlace;
 }
