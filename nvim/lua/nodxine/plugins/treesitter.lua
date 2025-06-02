@@ -31,7 +31,7 @@ return {
         "lua",
         "make",
         "markdown",
-        "prisma", -- TS ORM
+        "prisma",     -- TS ORM
         "properties", -- Java properties file
         "python",
         "regex",

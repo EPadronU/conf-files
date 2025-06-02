@@ -116,12 +116,13 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
 
-    tag = "v1.32.0",
-
     dependencies = { "mason.nvim" },
 
     config = function()
       require("mason-lspconfig").setup {
+        -- Whether installed servers should automatically be enabled
+        automatic_enable = false,
+
         -- A list of servers to automatically install if they're not already installed
         ensure_installed = {
           "bashls",

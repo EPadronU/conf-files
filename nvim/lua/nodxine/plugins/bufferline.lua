@@ -2,7 +2,7 @@ return {
   -- A buffer line (with tabpage integration) for Neovim built using lua
   "akinsho/bufferline.nvim",
 
-  dependencies = { "kyazdani42/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
 
   opts = {
     options = {

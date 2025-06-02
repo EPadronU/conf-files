@@ -130,13 +130,13 @@ return {
           vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 
           vim_item.menu = ({
-                buffer = "[Buffer]",
-                emoji = "[Emoji]",
-                fish = "[󰈺]",
-                luasnip = "[Snippet]",
                 nvim_lsp = "[LSP]",
-                nvim_lua = "[Lua]",
                 path = "[Path]",
+                buffer = "[Buffer]",
+                fish = "[󰈺]",
+                nvim_lua = "[Lua]",
+                luasnip = "[Snippet]",
+                emoji = "[Emoji]",
                 spell = "[Spell]",
               })[entry.source.name]
 

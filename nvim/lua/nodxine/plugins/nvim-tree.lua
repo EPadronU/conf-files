@@ -1,8 +1,8 @@
 return {
   -- A File Explorer For Neovim Written In Lua
-  "kyazdani42/nvim-tree.lua",
+  "nvim-tree/nvim-tree.lua",
 
-  dependencies = { "kyazdani42/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
 
   keys = {
     { "<Leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
@@ -278,7 +278,7 @@ return {
 
       local function send_to_trash_with_kioclient(uri)
         vim.fn.jobstart(string.format("kioclient move '%s' trash:/", uri), {
-          detach = true, on_exit = require("nvim-tree.actions.reloaders.reloaders").reload_explorer
+          detach = true, on_exit = require("nvim-tree.api").tree.reload()
         })
       end
 

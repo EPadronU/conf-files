@@ -6,7 +6,7 @@ end
 
 lspconfig.tailwindcss.setup {
   filetypes = {
-    "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx"
+    "css", "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx"
   },
 
   on_attach = require("nodxine.plugins.lsp.handlers").on_attach,

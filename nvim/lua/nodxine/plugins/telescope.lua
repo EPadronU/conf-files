@@ -4,7 +4,7 @@ return {
 
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "kyazdani42/nvim-web-devicons",
+    "nvim-tree/nvim-web-devicons",
     {
       -- Native telescope sorter to significantly improve sorting performance
       "nvim-telescope/telescope-fzf-native.nvim",
