@@ -14,7 +14,6 @@ detailViewIconSize=16
 iconViewIconSize=64
 
 [MainWindow]
-StatusBar=Disabled
 ToolBarsMovable=Disabled
 
 [Viewer]

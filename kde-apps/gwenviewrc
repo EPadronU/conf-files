@@ -7,8 +7,6 @@ CropRatioHeight=1
 CropRatioIndex=1
 CropRatioWidth=1
 
-[FileDialogSize]
-
 [FullScreen]
 FullScreenBarHeight=88
 

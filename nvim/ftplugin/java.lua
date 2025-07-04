@@ -27,6 +27,9 @@ jdtls.start_or_attach {
       autobuild = { enabled = true },
 
       codeGeneration = {
+        -- Whether to generate the 'final' modifer for code actions that create new declarations
+        addFinalForNewDeclaration = "all",
+
         -- Generate method comments when generating the methods
         generateComments = false,
 
@@ -42,7 +45,7 @@ jdtls.start_or_attach {
           -- The code style for generating the `toString` method
           -- Possible vaues: STRING_CONCATENATION, STRING_BUILDER, STRING_BUILDER_CHAINED,
           -- STRING_FORMAT
-          codeStyle = "STRING_CONCATENATION",
+          codeStyle = "STRING_FORMAT",
 
           -- Limit the number of items in arrays/collections/maps to list. If 0 then list all
           limitElements = 0,
@@ -57,7 +60,7 @@ jdtls.start_or_attach {
           template = "[${object.className}]={${member.name()}=${member.value}, ${otherMembers}}",
         },
         -- Use blocks in `if` statements when generating the methods
-        useBlocks = false,
+        useBlocks = true,
       },
       completion = {
         -- Enable completion
@@ -69,6 +72,9 @@ jdtls.start_or_attach {
         -- When set to true, code completion overwrites the current text
         -- When set to false, code completion is simply added instead
         overwrite = true,
+
+        -- Specify how the arguments will be filled during completion.
+        guessMethodArguments = "insertBestGuessedArguments"
       },
       -- Enable/disable smart folding range support. If disabled, it will use the
       -- default indentation-based folding range provided by neovim/treesitter
@@ -85,7 +91,7 @@ jdtls.start_or_attach {
         onType = { enabled = true },
       },
       -- Enable/disable the implementations code lens
-      implementationsCodeLens = { enabled = true },
+      implementationsCodeLens = "all",
 
       import = {
         -- Enable/disable the Maven importer
@@ -110,7 +116,14 @@ jdtls.start_or_attach {
       },
 
       -- Enable/disable signature help
-      signatureHelp = { enabled = true },
+      signatureHelp = {
+        enabled = true,
+
+        description = {
+          -- Enable/disable to show the description in signature help
+          enabled = true
+        }
+      },
 
       -- Enable/disable the semantic highlighting
       semanticHighlighting = { enabled = true },

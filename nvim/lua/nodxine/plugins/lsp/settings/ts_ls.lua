@@ -9,6 +9,42 @@ lspconfig.ts_ls.setup {
     "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx"
   },
 
+  settings = {
+    javascript = {
+      format = {
+        semicolons = "insert"
+      },
+      inlayHints = {
+        parameterNames = {
+          enabled = "literals"
+        }
+      },
+      preferences = {
+        quoteStyle = "single"
+      },
+      updateImportsOnFileMove = {
+        enabled = "always"
+      },
+    },
+
+    typescript = {
+      format = {
+        semicolons = "insert"
+      },
+      inlayHints = {
+        parameterNames = {
+          enabled = "literals"
+        }
+      },
+      preferences = {
+        quoteStyle = "single"
+      },
+      updateImportsOnFileMove = {
+        enabled = "always"
+      },
+    },
+  },
+
   on_attach = require("nodxine.plugins.lsp.handlers").on_attach,
 
   capabilities = require("nodxine.plugins.lsp.handlers").capabilities,

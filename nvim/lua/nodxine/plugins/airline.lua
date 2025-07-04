@@ -61,7 +61,7 @@ return {
       let airline#extensions#nvimlsp#warning_symbol = ' '
 
       " Customize the whitespace symbol
-      let g:airline#extensions#whitespace#symbol = ''
+      let g:airline#extensions#whitespace#symbol = '󰁮'
     ]]
   end,
 }

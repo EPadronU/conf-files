@@ -3,8 +3,6 @@ MenuBar=Disabled
 [Audio Preview Settings]
 Autoplay=false
 
-[FileDialogSize]
-
 [KFileDialog Settings]
 detailViewIconSize=16
 
@@ -26,10 +24,6 @@ mediaDoubleClickImport=false
 [OnlineResources]
 provider=Pexels Video
 zoom=6
-
-[Recent Dirs]
-
-[Recent Files]
 
 [RenderWidget]
 showoptions=true
@@ -114,7 +108,7 @@ audiocapturechannels=1
 decklink_capturedevice=4294967295
 decklink_extension=mov
 decklink_parameters=vcodec=dnxhd vb=145000k acodec=pcm_s16le threads=%threads
-defaultaudiocapture=0
+defaultaudiocapture=Family 17h/19h/1ah HD Audio Controller Headphones Stereo Microphone
 grab_extension=mov
 grab_fps=30
 grab_parameters=-crf 25 -vcodec libx264 -preset veryfast -threads 0
@@ -162,16 +156,17 @@ parallelrender=true
 previewextension=mp4
 previewparams=hwaccel=vaapi hwaccel_device=renderD128 hwaccel_output_format=vaapi vcodec=hevc_vaapi vb=30000k
 proxy_profile=11
-proxyalphaextension=mkv
-proxyalphaparams=-vf scale=%width:-2 -f mov -vcodec ffv1 -pix_fmt bgra -c:a aac -ab 128k
 proxyextension=mov
 proxyimageminsize=1920
 proxyminsize=1920
-proxyparams=-init_hw_device vaapi=vaapi0: -filter_hw_device vaapi0 -i -vf scale=%width:-2,format=nv12,hwupload -codec:v h264_vaapi -g 1 -bf 0 -qp 26 -acodec ac3 -ab 128k
+proxyparams=-init_hw_device vaapi=vaapi0: -filter_hw_device vaapi0 -i -vf scale=%width:-2,format=nv12,hwupload -vsync 1 -c:v h264_vaapi -g 1 -bf 0 -qp 26 -c:a aac -ab 128k
 proxyscale=1920
 renderInterp=bicubic
 transcodeFriendly=Lossy x264 I frame only (VAAPI GPU)
 videotracks=3
+
+[sam]
+sam_system_python_path[$e]=/usr/bin/python3
 
 [sdl]
 blackmagic_output_device=-1
@@ -179,15 +174,17 @@ preferredcomposite=frei0r.cairoblend
 window_background=0,54,54
 
 [settings]
-dialogSize=1915,1043
+dialogSize=1920,1048
 
 [shuttle]
 shuttlebuttons=button0=monitor_pause
 
 [speech]
 pythonPath=/usr/bin/python3
+samDevice=
+speech_system_python_path[$e]=/usr/bin/python3
 vosk_text_model=vosk-model-en-us-0.42-gigaspeech
-whisperDevice=
+whisperModel=
 
 [timeline]
 autotrackheight=true
@@ -211,7 +208,7 @@ titlerVersion=300
 alwaysShowMonitorAudio=true
 consumerslist=multi,null,xgl,decklink,cbrts,qglsl,rtaudio,blipflash,avformat,xml,sdl2,sdl2_audio,jack
 default_marker_type=15
-default_profile=atsc_1080p_50
+default_profile=atsc_1080p_30
 defaultrescaleheight=1080
 defaultrescalewidth=1920
 displayProjectMonitorInfo=37
@@ -232,4 +229,4 @@ validated_luts=/app/share/kdenlive/luts/BLUE_TINT.cube,/app/share/kdenlive/luts/
 widgetstyle=Default
 
 [version]
-version=25.04.0
+version=25.04.1
