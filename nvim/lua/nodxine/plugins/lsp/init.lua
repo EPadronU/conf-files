@@ -208,6 +208,8 @@ return {
     -- Allows to seamlessly install LSP servers locally
     "neovim/nvim-lspconfig",
 
+    tag = "v2.4.0",
+
     dependencies = {
       "mason.nvim",
       "mason-lspconfig.nvim",

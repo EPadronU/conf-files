@@ -257,7 +257,7 @@ _launch=Meta+\\,,none,KeePassXC
 
 [org.mozilla.firefox.desktop]
 _k_friendly_name=Firefox Web Browser
-_launch=Meta+',none,Firefox Web Browser
+_launch=Meta+Ñ,none,Firefox Web Browser
 new-private-window=none,none,New Private Window
 new-window=none,none,New Window
 profile-manager-window=none,none,Open the Profile Manager
