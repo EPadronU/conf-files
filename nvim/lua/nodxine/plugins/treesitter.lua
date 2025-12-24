@@ -7,7 +7,7 @@ return {
   build = ":TSUpdate",
 
   config = function()
-    require("nvim-treesitter.configs").setup {
+    require("nvim-treesitter.config").setup {
       -- A list of parser names, or `all`
       ensure_installed = {
         "bash",

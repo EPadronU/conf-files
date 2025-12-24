@@ -183,6 +183,7 @@ toolbar actions=back,forward,reload,sync_dir,bookmarks,configure
 [filetree]
 editShade=246,183,183
 listMode=false
+middleClickToClose=false
 shadingEnabled=true
 showCloseButton=false
 showFullPathOnRoots=false
