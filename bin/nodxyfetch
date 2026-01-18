@@ -41,8 +41,7 @@ BACKGROUND_WHITE='\u001b[107m'
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Info ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#disk_usage=$(df -h -x aufs -x tmpfs -x overlay --total 2>/dev/null | tail -1)
-disk_usage=$(df -h | grep -E '/$')
+disk_usage=$(df -h -x aufs -x tmpfs -x overlay --total 2>/dev/null | tail -1)
 disk_total=$(awk '{print $2}' <<< "${disk_usage}")
 disk_used=$(awk '{print $3}' <<< "${disk_usage}")
 disk_per=$(awk '{print $5}' <<< "${disk_usage}")

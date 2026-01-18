@@ -36,6 +36,7 @@ return {
         "python",
         "regex",
         "ruby",
+        "rust",
         "sql",
         "tsx",
         "typescript",

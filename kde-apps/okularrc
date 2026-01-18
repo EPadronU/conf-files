@@ -15,6 +15,5 @@ iconViewIconSize=64
 [MainWindow]
 HDMI-A-1-0 eDP=eDP
 MenuBar=Disabled
-ToolBarsMovable=Disabled
 
 [Recent Files]

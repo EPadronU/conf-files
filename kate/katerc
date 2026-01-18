@@ -101,6 +101,8 @@ Font=FiraCode Nerd Font,12,-1,5,57,0,0,0,0,0,Medium
 Line Height Multiplier=1
 Show Indentation Lines=true
 Show Whole Bracket Expression=false
+Text Font=FiraCode Nerd Font Mono Med,10,-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Regular
+Text Font Features=
 Word Wrap Marker=false
 
 [KTextEditor View]
@@ -165,7 +167,6 @@ Word Completion Remove Tail=true
 
 [KTextEditor::Search]
 Replace History=
-Search History=
 
 [Konsole]
 AutoSyncronize=true

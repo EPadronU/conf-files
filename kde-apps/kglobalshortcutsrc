@@ -18,7 +18,7 @@ _k_friendly_name=Keyboard Layout Switcher
 547636D07A1E6E54D3F7CD4D7F369638-relax-blocking-mode=none,none,Relax blocking mode
 547636D07A1E6E54D3F7CD4D7F369638-toggle-cosmetic-filtering=none,none,Toggle cosmetic filtering
 547636D07A1E6E54D3F7CD4D7F369638-toggle-javascript=none,none,Toggle JavaScript
-_k_friendly_name=Ungoogled Chromium
+_k_friendly_name=io.github.ungoogled_software.ungoogled_chromium
 
 [kaccess]
 Toggle Screen Reader On and Off=none,Meta+Alt+S,Toggle Screen Reader On and Off

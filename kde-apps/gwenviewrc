@@ -27,7 +27,6 @@ iconViewIconSize=64
 
 [MainWindow]
 HDMI-A-1-0 eDP=HDMI-A-1-0
-ToolBarsMovable=Disabled
 eDP=eDP
 eDP HDMI-A-1-0=eDP
 eDP HDMI-A-1-0 Height 1920x1080 HDMI-A-1-0=493

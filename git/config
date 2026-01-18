@@ -1,6 +1,6 @@
 [user]
 	name = Edinson E. Padrón Urdaneta
-	email = edinson.padron+git@posteo.net
+	email = epadron+git@posteo.com
 	signingkey = AF9458519F9A3E60
 [core]
 	editor = nvim
